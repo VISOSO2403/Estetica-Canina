@@ -29,8 +29,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="30dp"
-            android:background="@drawable/stylo_border_rect"
-            android:backgroundTint="@color/whiterect"
+
             android:gravity="center"
             android:orientation="vertical">
 
@@ -45,14 +44,14 @@
                     android:id="@+id/btniniciar"
                     android:layout_width="142dp"
                     android:layout_height="55dp"
-                    android:background="@drawable/stylo_border_right"
+
                     android:text="Iniciar" />
 
                 <Button
                     android:id="@+id/btnregistrar"
                     android:layout_width="wrap_content"
                     android:layout_height="55dp"
-                    android:background="@drawable/stylo_border_left"
+
                     android:text="Registrarse"
                     android:textColor="#130000"
                     app:backgroundTint="#DFDEDE"/>
@@ -141,7 +140,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
-                    android:background="@drawable/stylo_border_rect"
+
                     android:text="Registrarse" />
 
             </LinearLayout>
