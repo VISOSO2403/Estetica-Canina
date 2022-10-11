@@ -89,21 +89,23 @@
                 <EditText
                     android:id="@+id/etxtnombre"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:hint="Tu nombre aqui"/>
 
                 <TextView
                     android:id="@+id/txtapellido"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Nombre"
+                    android:text="Apellido"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
 
                 <EditText
                     android:id="@+id/etxtapellido"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:hint="Tu apellido aqui" />
 
                 <TextView
                     android:id="@+id/txtemail"
