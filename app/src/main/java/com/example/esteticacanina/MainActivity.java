@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         getWindow() .setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-        //ANIMCACION
+        //ANIMACION
         topAnim = AnimationUtils.loadAnimation(this, R.anim.top_animation);
 
         logo = findViewById(R.id.imglogo);
