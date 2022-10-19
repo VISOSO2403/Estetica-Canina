@@ -51,13 +51,10 @@
                     app:backgroundTint="@color/morado" />
 
                 <Button
-                    android:id="@+id/btnregistrar"
                     android:layout_width="wrap_content"
-                    android:layout_height="55dp"
-                    android:background="@drawable/stylo_border_right"
+                    android:layout_height="wrap_content"
                     android:text="Registrarse"
-                    android:textColor="#130000"
-                    app:backgroundTint="#DFDEDE" />
+                    android:id="@+id/btnregistrar"/>
 
             </LinearLayout>
 
