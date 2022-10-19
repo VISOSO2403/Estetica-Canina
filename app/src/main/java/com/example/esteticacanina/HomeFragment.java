@@ -23,7 +23,9 @@ public class HomeFragment extends Fragment {
        vermas.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Intent i = new Intent()
+               Intent i = new Intent(getActivity(), ServiciosActivity.class);
+               startActivity(i);
+               getActivity().finish();
            }
         });
 
