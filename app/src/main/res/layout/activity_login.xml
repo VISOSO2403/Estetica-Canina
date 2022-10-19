@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo_perros"
+    android:background="@color/fondo"
     android:gravity="center"
     tools:context=".LoginActivity">
 
     <LinearLayout
         android:id="@+id/contenedor"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center">
 
@@ -25,14 +25,13 @@
         <LinearLayout
             android:id="@+id/contenedor2"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/contenedor"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/stylo_border_rect"
             android:backgroundTint="@color/whiterect"
-            android:gravity="center"
             android:orientation="vertical">
 
             <LinearLayout
@@ -40,6 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_marginTop="30dp"
                 android:textAlignment="center">
 
                 <Button
@@ -47,7 +47,8 @@
                     android:layout_width="142dp"
                     android:layout_height="55dp"
                     android:background="@drawable/stylo_border_left"
-                    android:text="Iniciar" />
+                    android:text="Iniciar"
+                    app:backgroundTint="@color/morado" />
 
                 <Button
                     android:id="@+id/btnregistrar"
@@ -56,7 +57,7 @@
                     android:background="@drawable/stylo_border_right"
                     android:text="Registrarse"
                     android:textColor="#130000"
-                    app:backgroundTint="#DFDEDE"/>
+                    app:backgroundTint="#DFDEDE" />
 
             </LinearLayout>
 
@@ -83,7 +84,7 @@
                     android:id="@+id/txtemail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_margin="5dp"
                     android:text="Email"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -92,13 +93,17 @@
                     android:id="@+id/etxtemail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textColor="@color/morado"
+                    android:background="@drawable/stylo_border_edittex"
                     android:hint="Correo@correo.com"/>
 
                 <TextView
                     android:id="@+id/txtpassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
                     android:text="Contraseña"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -107,14 +112,19 @@
                     android:id="@+id/etxtpassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textColor="@color/morado"
+                    android:background="@drawable/stylo_border_edittex"
                     android:layout_below="@+id/textcor" />
 
                 <Button
                     android:id="@+id/btningresar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/stylo_border_rect"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginHorizontal="25dp"
+                    android:backgroundTint="@color/morado"
+                    app:cornerRadius="24dp"
                     android:text="Ingresar" />
 
             </LinearLayout>
