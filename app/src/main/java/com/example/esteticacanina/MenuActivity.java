@@ -45,8 +45,6 @@ public class MenuActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, userFragment).commit();
                         return true;
                 }
-
-
                 return false;
             }
         });
