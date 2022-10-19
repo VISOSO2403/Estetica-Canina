@@ -96,7 +96,7 @@
                     android:layout_margin="5dp"
                     android:textColor="@color/morado"
                     android:background="@drawable/stylo_border_edittex"
-                    android:hint="Igresa tu nombre "/>
+                    android:hint="Ingresa tu nombre "/>
 
                 <TextView
                     android:id="@+id/txtapellido"
