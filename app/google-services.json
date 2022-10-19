@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "889640128085",
+    "firebase_url": "https://pet-care-bab3d-default-rtdb.firebaseio.com",
+    "project_id": "pet-care-bab3d",
+    "storage_bucket": "pet-care-bab3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889640128085:android:f1b19e9fbb5bcb557f4edc",
+        "android_client_info": {
+          "package_name": "com.example.esteticacanina"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889640128085-v7cn33pfu10rqenduhq40ju638b4ns1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsOMS13QrdXVxNlQ0L8_LuE3egKY2e1Ok"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889640128085-v7cn33pfu10rqenduhq40ju638b4ns1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
