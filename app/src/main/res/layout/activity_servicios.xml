@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".ServiciosActivity">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
+            style="@style/AppTheme.CardView">
+
+            <RelativeLayout
+                android:id="@+id/linearLayoutCardContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/contenedor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiterect"
+                    android:orientation="vertical"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/srvc_corte_pelo" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="187dp"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/txtNomServ"
+                            android:layout_width="89dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Servicio"
+                            android:textAppearance="?attr/textAppearanceHeadline6" />
+
+                        <TextView
+                            android:id="@+id/txtInfoServ"
+                            android:layout_width="98dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Descripcion" />
+
+                        <TextView
+                            android:id="@+id/txtInfoServ2"
+                            android:layout_width="98dp"
+                            android:layout_height="30dp"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="1"
+                            android:gravity="center_vertical"
+                            android:text="Costos" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/contenedor1"
+                    android:background="@color/whiterect"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <Button
+                        android:id="@+id/btnagendar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:layout_marginHorizontal="5dp"
+                        android:backgroundTint="@color/morado"
+                        app:cornerRadius="24dp"
+                        android:text="Agendar"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12dp" />
+
+                    <Button
+                        android:id="@+id/btncancelar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:layout_marginHorizontal="5dp"
+                        style="?attr/materialButtonOutlinedStyle"
+                        app:strokeColor="@color/morado"
+                        app:cornerRadius="24dp"
+                        android:text="Cancelar"
+                        android:textColor="@color/morado"
+                        android:textSize="12dp" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </ScrollView>
+
+</RelativeLayout>
