@@ -7,7 +7,7 @@
     android:background="@color/fondo"
     tools:context=".UserFragment">
 
-    <ScrollView
+    <RelativeLayout
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,16 +16,19 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
-                style="@style/AppTheme.CardView">
+                style="@style/AppTheme.CardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <RelativeLayout
                     android:id="@+id/linearLayoutCardContent"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@color/whiterect"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -58,8 +61,8 @@
                                 android:layout_gravity="center"
                                 android:gravity="center"
                                 android:text="Nombre de usuario"
-                                android:textSize="24dp"
-                                android:textAppearance="?attr/textAppearanceHeadline6" />
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:textSize="24dp" />
 
                             <TextView
                                 android:id="@+id/txtNumUsu"
@@ -68,20 +71,21 @@
                                 android:layout_gravity="center"
                                 android:gravity="center_vertical"
                                 android:text="Número de celular"
-                                android:textSize="20dp"/>
+                                android:textSize="20dp" />
 
                             <Button
                                 android:id="@+id/btnEditPerf"
+                                style="?attr/materialButtonOutlinedStyle"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:gravity="center_vertical"
-                                style="?attr/materialButtonOutlinedStyle"
-                                app:strokeColor="@color/morado"
+                                android:text="Editar perfil"
                                 app:cornerRadius="24dp"
-                                android:text="Editar perfil" />
+                                app:strokeColor="@color/morado" />
 
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -95,74 +99,80 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="25dp"
                                 android:text="Mascotas"
-                                android:textSize="20dp"
-                                android:textAppearance="?attr/textAppearanceHeadline6" />
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:textSize="20dp" />
 
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
+
                             <Button
                                 android:id="@+id/btnAgrMasc"
                                 android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="25dp"
                                 android:backgroundTint="@color/morado"
-                                app:cornerRadius="12dp"
-                                android:text="+"/>
+                                android:text="+"
+                                app:cornerRadius="12dp" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Agregar mascota"
-                                android:textSize="14dp"/>
+                                android:textSize="14dp" />
                         </LinearLayout>
 
 
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_below="@+id/contenedor"
-                        android:layout_marginTop="15dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/whiterect"
                         android:orientation="vertical"
+                        android:gravity="bottom"
                         android:padding="5dp">>
 
                         <Button
                             android:id="@+id/btnAcerDe"
+                            style="?attr/materialButtonOutlinedStyle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="5dp"
-                            style="?attr/materialButtonOutlinedStyle"
-                            app:strokeColor="@color/morado"
-                            app:cornerRadius="24dp"
                             android:text="Acerca de"
                             android:textColor="@color/morado"
-                            android:textSize="16dp" />
+                            android:textSize="16dp"
+                            app:cornerRadius="24dp"
+                            app:strokeColor="@color/morado" />
 
                         <Button
                             android:id="@+id/btnPriPoli"
+                            style="?attr/materialButtonOutlinedStyle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="5dp"
-                            style="?attr/materialButtonOutlinedStyle"
-                            app:strokeColor="@color/morado"
-                            app:cornerRadius="24dp"
                             android:text="Privacidad y políticas"
                             android:textColor="@color/morado"
-                            android:textSize="16dp" />
+                            android:textSize="16dp"
+                            app:cornerRadius="24dp"
+                            app:strokeColor="@color/morado" />
 
                         <Button
                             android:id="@+id/btnCerrarSesion"
+                            style="?attr/materialButtonOutlinedStyle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="5dp"
-                            style="?attr/materialButtonOutlinedStyle"
-                            app:strokeColor="@color/morado"
-                            app:cornerRadius="24dp"
                             android:text="Cerrar sesión"
                             android:textColor="@color/morado"
-                            android:textSize="16dp" />
+                            android:textSize="16dp"
+                            app:cornerRadius="24dp"
+                            app:strokeColor="@color/morado" />
                     </LinearLayout>
 
 
@@ -171,6 +181,6 @@
             </com.google.android.material.card.MaterialCardView>
         </RelativeLayout>
 
-    </ScrollView>
+    </RelativeLayout>
 
 </RelativeLayout>
