@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#E5E7EB"
     tools:context=".CalenderFragment">
 
@@ -12,6 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtmiscitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="MIS CITAS"
+            android:padding="16dp"
+            android:textAlignment="center"
+            android:textSize="25dp" />
 
         <LinearLayout
             android:id="@+id/contenedor2"
@@ -26,6 +37,7 @@
             android:backgroundTint="@color/whiterect"
             android:orientation="vertical">
 
+
             <LinearLayout
                 android:id="@+id/contenedor4"
                 android:layout_width="match_parent"
@@ -34,41 +46,47 @@
                 android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/txtmiscitas"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="MIS CITAS"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="20dp" />
-
                 <!---https://www.develou.com/android-listas-adaptadores/#Anadir_ListView_al_layout-->
-                <FrameLayout
+                <ScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <FrameLayout
 
-                    android:id="@+id/lista"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingTop="8dp"
-                    tools:context="com.herprogramacion.crmleads.LeadsFragment">
-
-                    <ListView
-                        android:id="@+id/contenedor_list"
+                        android:id="@+id/lista"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:divider="@null" />
+                        android:paddingTop="8dp"
+                        tools:context="com.herprogramacion.crmleads.LeadsFragment">
 
-                </FrameLayout>
+                        <ListView
+                            android:id="@+id/contenedor_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:divider="@null" />
 
-                <Button
-                    android:id="@+id/btnreporte"
+
+                    </FrameLayout>
+                </ScrollView>
+
+                <LinearLayout
+                    android:id="@+id/contenedor5"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="match_parent"
                     android:layout_alignParentBottom="true"
-                    android:background="@drawable/stylo_border_rect"
-                    android:text="Generar Reporte" />
+                    android:background="@color/whiterect"
+                    android:orientation="horizontal"
+                    android:gravity="bottom">
+
+                        <Button
+                        android:id="@+id/btnreporte"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:backgroundTint="@color/morado"
+                        app:cornerRadius="24dp"
+                        android:text="Generar Reporte" />
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -76,4 +94,4 @@
 
     </LinearLayout>
 
-</ScrollView>
+</RelativeLayout>
