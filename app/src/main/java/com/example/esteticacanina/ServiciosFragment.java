@@ -12,7 +12,7 @@ import android.widget.Button;
 public class ServiciosFragment extends Fragment {
 
     //VARIABLES
-    Button agendar, cancelar;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
