@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -90,7 +90,8 @@
                     android:id="@+id/etxtnombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Tu nombre aqui"
+                    android:hint="Nombre(s)"
+                    android:background="@drawable/stylo_border_edittex"
                     android:minHeight="48dp" />
 
                 <TextView
@@ -106,7 +107,8 @@
                     android:id="@+id/etxtapellido"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Tu apellido aqui"
+                    android:hint="Apellido(s)"
+                    android:background="@drawable/stylo_border_edittex"
                     android:minHeight="48dp" />
 
                 <TextView
@@ -123,6 +125,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="correo@correo.com"
+                    android:background="@drawable/stylo_border_edittex"
                     android:minHeight="48dp" />
 
                 <TextView
@@ -140,6 +143,8 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textcor"
                     android:minHeight="48dp"
+                    android:background="@drawable/stylo_border_edittex"
+                    android:inputType="textPassword"
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
@@ -158,4 +163,4 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+</ScrollView>

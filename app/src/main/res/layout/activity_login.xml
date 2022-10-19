@@ -51,10 +51,13 @@
                     app:backgroundTint="@color/morado" />
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="142dp"
+                    android:layout_height="55dp"
                     android:text="Registrarse"
-                    android:id="@+id/btnregistrar"/>
+                    android:id="@+id/btnregistrar"
+                    android:textColor="#130000"
+                    app:backgroundTint="#DFDEDE"
+                    android:background="@drawable/stylo_border_right"/>
 
             </LinearLayout>
 
@@ -111,6 +114,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:textColor="@color/morado"
+                    android:inputType="textPassword"
                     android:background="@drawable/stylo_border_edittex"
                     android:layout_below="@+id/textcor" />
 
