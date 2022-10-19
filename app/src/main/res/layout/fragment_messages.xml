@@ -3,14 +3,127 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#E5E7EB"
     tools:context=".MessagesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:layout_centerInParent="true"
-        android:text="Mensajes Fragment" />
+    <LinearLayout
+        android:id="@+id/contenedor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/txttitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="Pendiente a Confirmar"
+            android:textSize="25dp"
+            android:textAlignment="center"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/contenedor2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/contenedor"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/stylo_border_rect"
+            android:backgroundTint="@color/whiterect"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/contenedor3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/contenedor2"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtdescripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/black"
+                    android:text="Hemos recibido tu solicitud para tu cita, los horarios disponibles para ese dia son:"/>
+
+                <TextView
+                    android:id="@+id/txtinstruccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/black"
+                    android:text="Favor de elegir uno y confirmar tu cita."/>
+
+                <LinearLayout
+                    android:id="@+id/contenedor4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp">
+
+                    <Button
+                        android:id="@+id/btnHoras"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:layout_marginHorizontal="5dp"
+                        style="?attr/materialButtonOutlinedStyle"
+                        app:strokeColor="@color/morado"
+                        app:cornerRadius="24dp"
+                        android:text="--:-- - --:--"
+                        android:textColor="@color/morado"
+                        android:textSize="12dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/contenedor5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:background="@color/whiterect"
+                android:orientation="horizontal"
+                android:gravity="bottom">
+
+                <Button
+                    android:id="@+id/btnConfirmar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:layout_marginHorizontal="5dp"
+                    android:backgroundTint="@color/morado"
+                    app:cornerRadius="24dp"
+                    android:text="Confirmar"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12dp" />
+
+                <Button
+                    android:id="@+id/btnCancelar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:layout_marginHorizontal="5dp"
+                    style="?attr/materialButtonOutlinedStyle"
+                    app:strokeColor="@color/morado"
+                    app:cornerRadius="24dp"
+                    android:text="Cancelar"
+                    android:textColor="@color/morado"
+                    android:textSize="12dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
 </RelativeLayout>
