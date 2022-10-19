@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/fondo"
-    tools:context=".ServiciosActivity">
+    android:id="@+id/contenedor"
+    tools:context=".ServiciosFragment">
 
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        android:scrollbars="none">
-
-        <RelativeLayout
+    <!-- TODO: Update blank fragment layout -->
+        <ScrollView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:padding="16dp">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
@@ -29,7 +25,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:id="@+id/contenedor"
+                        android:id="@+id/contenedor1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/whiterect"
@@ -82,18 +78,18 @@
 
                         </LinearLayout>
 
-
                     </LinearLayout>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/contenedor"
+                        android:layout_below="@+id/contenedor1"
                         android:background="@color/whiterect"
                         android:orientation="horizontal"
-                        android:padding="5dp">>
+                        android:padding="5dp">
 
                         <Button
-                            android:id="@+id/btnAgendar"
+                            android:id="@+id/btnagendar"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
@@ -105,7 +101,7 @@
                             android:textSize="12dp" />
 
                         <Button
-                            android:id="@+id/btnCancelar"
+                            android:id="@+id/btncancelar"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="5"
@@ -118,12 +114,10 @@
                             android:textSize="12dp" />
                     </LinearLayout>
 
-
                 </RelativeLayout>
 
             </com.google.android.material.card.MaterialCardView>
-        </RelativeLayout>
 
-    </ScrollView>
+        </ScrollView>
 
 </RelativeLayout>
