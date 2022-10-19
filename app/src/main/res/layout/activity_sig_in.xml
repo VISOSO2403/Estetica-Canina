@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EDE7F6"
-    tools:context=".SigninActivity">
+    tools:context=".SigInActivity">
 
     <LinearLayout
         android:id="@+id/contenedor"
@@ -16,15 +15,15 @@
 
         <ImageView
             android:id="@+id/imglogo"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/logo_whitebackground" />
+            android:background="@drawable/logo_nobackground" />
 
         <LinearLayout
             android:id="@+id/contenedor2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="500dp"
             android:layout_below="@+id/contenedor"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
@@ -38,7 +37,6 @@
                 android:id="@+id/contenedor3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
                 android:gravity="center"
                 android:textAlignment="center">
 
@@ -56,7 +54,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="55dp"
                     android:background="@drawable/stylo_border_right"
-                    app:backgroundTint="@color/morado"
                     android:text="Registrarse" />
 
             </LinearLayout>
@@ -84,7 +81,7 @@
                     android:id="@+id/txtnombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_marginTop="10dp"
                     android:text="Nombre"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -93,17 +90,14 @@
                     android:id="@+id/etxtnombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:textColor="@color/morado"
-                    android:background="@drawable/stylo_border_edittex"
-                    android:hint="Igresa tu nombre "/>
+                    android:hint="Tu nombre aqui"
+                    android:minHeight="48dp" />
 
                 <TextView
                     android:id="@+id/txtapellido"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:text="Apellido"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -112,17 +106,14 @@
                     android:id="@+id/etxtapellido"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:textColor="@color/morado"
-                    android:background="@drawable/stylo_border_edittex"
-                    android:hint="Ingresa tu apellido " />
+                    android:hint="Tu apellido aqui"
+                    android:minHeight="48dp" />
 
                 <TextView
                     android:id="@+id/txtemail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:text="Email"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -131,17 +122,14 @@
                     android:id="@+id/etxtemail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:textColor="@color/morado"
-                    android:background="@drawable/stylo_border_edittex"
-                    android:hint="correo@correo.com"/>
+                    android:hint="correo@correo.com"
+                    android:minHeight="48dp" />
 
                 <TextView
                     android:id="@+id/txtpassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="5dp"
                     android:text="Contraseña"
                     android:textColor="@color/black"
                     android:textSize="15dp" />
@@ -150,20 +138,19 @@
                     android:id="@+id/etxtpassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:textColor="@color/morado"
-                    android:background="@drawable/stylo_border_edittex"
-                    android:layout_below="@+id/textcor" />
+                    android:layout_below="@+id/textcor"
+                    android:minHeight="48dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <Button
                     android:id="@+id/btnregistrarse"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginHorizontal="25dp"
-                    android:backgroundTint="@color/morado"
-                    app:cornerRadius="24dp"
-                    android:text="Registrarse" />
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/stylo_border_rect"
+                    android:minHeight="48dp"
+                    android:text="Registrarse"
+                    tools:ignore="TouchTargetSizeCheck" />
 
             </LinearLayout>
 
@@ -171,4 +158,4 @@
 
     </LinearLayout>
 
-</ScrollView>
+</RelativeLayout>
