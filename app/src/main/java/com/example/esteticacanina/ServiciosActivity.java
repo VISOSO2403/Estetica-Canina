@@ -33,7 +33,11 @@ public class ServiciosActivity extends AppCompatActivity implements View.OnClick
                 startActivity(i);
                 finish();
                 break;
-
+            case R.id.btncancelar:
+                i = new Intent(ServiciosActivity.this, MenuActivity.class);
+                startActivity(i);
+                finish();
+                break;
         }
     }
 }
