@@ -40,4 +40,13 @@ public class ServiciosActivity extends AppCompatActivity implements View.OnClick
                 break;
         }
     }
+
+    // Vuelve a una pantalla anterior al proceso actual
+    // mediante el boton onBack del telefono
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(ServiciosActivity.this, MenuActivity.class));
+        finish();
+    }
 }
