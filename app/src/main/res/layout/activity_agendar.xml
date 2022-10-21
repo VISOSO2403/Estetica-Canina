@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo"
     tools:context=".AgendarActivity">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@id/scrollView"
         android:padding="16dp">
 
         <RelativeLayout
-            android:id="@id/contenedor"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/title"
@@ -23,12 +23,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="25dp"
-                android:text="Confrimar Datos" />
+                android:text="Confirmar Datos" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
                 style="@style/AppTheme.CardView"
-                android:layout_below="@+id/title">
+                android:layout_below="@+id/title"
+                app:cardCornerRadius="12dp">
 
                 <RelativeLayout
                     android:id="@+id/linearLayoutCardContent"
@@ -55,18 +56,18 @@
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
                                 android:gravity="center_vertical"
-                                android:textColor="@color/black"
                                 android:text="Nombre"
-                                android:textSize="18dp"/>
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
 
                             <EditText
                                 android:id="@+id/txtNom"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
-                                android:textColor="@color/morado"
                                 android:background="@drawable/stylo_border_edittex"
-                                android:hint="Escribe tu nombre"/>
+                                android:hint="Escribe tu nombre"
+                                android:textColor="@color/morado" />
 
                             <TextView
                                 android:id="@+id/tvTel"
@@ -76,18 +77,18 @@
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="20dp"
                                 android:gravity="center_vertical"
-                                android:textColor="@color/black"
                                 android:text="Teléfono"
-                                android:textSize="18dp"/>
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
 
                             <EditText
                                 android:id="@+id/txtTel"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
+                                android:background="@drawable/stylo_border_edittex"
                                 android:hint="Escribe tu teléfono"
-                                android:textColor="@color/morado"
-                                android:background="@drawable/stylo_border_edittex" />
+                                android:textColor="@color/morado" />
 
                             <TextView
                                 android:id="@+id/tvMasc"
@@ -97,8 +98,8 @@
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="20dp"
                                 android:gravity="center_vertical"
-                                android:textColor="@color/black"
                                 android:text="Mascota"
+                                android:textColor="@color/black"
                                 android:textSize="18dp" />
 
                             <LinearLayout
@@ -121,8 +122,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginHorizontal="15dp"
                                     android:backgroundTint="@color/morado"
-                                    app:cornerRadius="12dp"
-                                    android:text="+"/>
+                                    android:text="+"
+                                    app:cornerRadius="12dp" />
                             </LinearLayout>
 
                             <TextView
@@ -133,9 +134,9 @@
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="20dp"
                                 android:gravity="center_vertical"
-                                android:textColor="@color/black"
                                 android:text="Servicio"
-                                android:textSize="18dp"/>
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -149,7 +150,7 @@
                                     android:layout_gravity="center_vertical"
                                     android:layout_marginLeft="5dp"
                                     android:layout_weight="30"
-                                    android:background="@drawable/stylo_border_edittex"/>
+                                    android:background="@drawable/stylo_border_edittex" />
 
                                 <Button
                                     android:id="@+id/btnAgrServ"
@@ -157,8 +158,8 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginHorizontal="15dp"
                                     android:backgroundTint="@color/morado"
-                                    app:cornerRadius="12dp"
-                                    android:text="+"/>
+                                    android:text="+"
+                                    app:cornerRadius="12dp" />
                             </LinearLayout>
 
                             <TextView
@@ -169,9 +170,9 @@
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="20dp"
                                 android:gravity="center_vertical"
-                                android:textColor="@color/black"
                                 android:text="Elige dia para tu cita"
-                                android:textSize="18dp"/>
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
 
                             <Button
                                 android:id="@+id/btnSelecDia"
@@ -180,46 +181,13 @@
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
                                 android:backgroundTint="@color/morado"
-                                app:cornerRadius="12dp"
-                                android:text="Seleccionar"/>
+                                android:text="Seleccionar"
+                                app:cornerRadius="12dp" />
 
                         </LinearLayout>
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/contenedor"
-                        android:background="@color/whiterect"
-                        android:orientation="horizontal"
-                        android:padding="5dp">
-
-                        <Button
-                            android:id="@+id/btnAgendar"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="5"
-                            android:layout_marginHorizontal="5dp"
-                            android:backgroundTint="@color/morado"
-                            app:cornerRadius="24dp"
-                            android:text="Agendar"
-                            android:textColor="#FFFFFF"
-                            android:textSize="12dp" />
-
-                        <Button
-                            android:id="@+id/btnCancelar"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="5"
-                            android:layout_marginHorizontal="5dp"
-                            style="?attr/materialButtonOutlinedStyle"
-                            app:strokeColor="@color/morado"
-                            app:cornerRadius="24dp"
-                            android:text="Cancelar"
-                            android:textColor="@color/morado"
-                            android:textSize="12dp" />
-                    </LinearLayout>
 
                 </RelativeLayout>
 
@@ -227,6 +195,41 @@
 
         </RelativeLayout>
 
+
     </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/scrollView"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="15dp"
+        android:gravity="bottom"
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/btnAgendar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:layout_marginHorizontal="5dp"
+            android:backgroundTint="@color/morado"
+            app:cornerRadius="24dp"
+            android:text="Agendar"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:layout_marginHorizontal="5dp"
+            style="?attr/materialButtonOutlinedStyle"
+            app:strokeColor="@color/morado"
+            app:cornerRadius="24dp"
+            android:text="Cancelar"
+            android:textColor="@color/morado"
+            android:textSize="12dp" />
+    </LinearLayout>
 
 </RelativeLayout>

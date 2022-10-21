@@ -12,27 +12,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:padding="16dp">
 
         <TextView
-            android:id="@+id/txttitulo"
+            android:id="@+id/txtNotificaciones"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:text="Pendiente a Confirmar"
+            android:gravity="center"
             android:textSize="25dp"
-            android:textAlignment="center"
-            android:gravity="center" />
+            android:text="Notificaciones" />
 
-        <LinearLayout
+        <ScrollView
             android:id="@+id/contenedor2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/contenedor"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="30dp"
             android:background="@drawable/stylo_border_rect"
             android:backgroundTint="@color/whiterect"
             android:orientation="vertical">
@@ -42,7 +37,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/contenedor2"
-                android:layout_marginTop="10dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -67,11 +61,24 @@
                     android:id="@+id/contenedor4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:orientation="vertical"
                     android:layout_margin="15dp">
 
                     <Button
                         android:id="@+id/btnHoras"
-                        android:layout_width="0dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:layout_marginHorizontal="5dp"
+                        style="?attr/materialButtonOutlinedStyle"
+                        app:strokeColor="@color/morado"
+                        app:cornerRadius="24dp"
+                        android:text="--:-- - --:--"
+                        android:textColor="@color/morado"
+                        android:textSize="12dp"/>
+                    <Button
+                        android:id="@+id/btnHoras2"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
                         android:layout_marginHorizontal="5dp"
@@ -85,45 +92,46 @@
                 </LinearLayout>
 
             </LinearLayout>
-            <LinearLayout
-                android:id="@+id/contenedor5"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:background="@color/whiterect"
-                android:orientation="horizontal"
-                android:gravity="bottom">
 
-                <Button
-                    android:id="@+id/btnConfirmar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:layout_marginHorizontal="5dp"
-                    android:backgroundTint="@color/morado"
-                    app:cornerRadius="24dp"
-                    android:text="Confirmar"
-                    android:textColor="#FFFFFF"
-                    android:textSize="12dp" />
 
-                <Button
-                    android:id="@+id/btnCancelar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="5"
-                    android:layout_marginHorizontal="5dp"
-                    style="?attr/materialButtonOutlinedStyle"
-                    app:strokeColor="@color/morado"
-                    app:cornerRadius="24dp"
-                    android:text="Cancelar"
-                    android:textColor="@color/morado"
-                    android:textSize="12dp"/>
-            </LinearLayout>
+        </ScrollView>
 
+        <LinearLayout
+            android:id="@+id/contenedor5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/contenedor"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/btnConfirmar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:layout_marginHorizontal="5dp"
+                android:backgroundTint="@color/morado"
+                app:cornerRadius="24dp"
+                android:text="Confirmar"
+                android:textColor="#FFFFFF"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/btnCancelar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:layout_marginHorizontal="5dp"
+                style="?attr/materialButtonOutlinedStyle"
+                app:strokeColor="@color/morado"
+                app:cornerRadius="24dp"
+                android:text="Cancelar"
+                android:textColor="@color/morado"
+                android:textSize="12dp"/>
         </LinearLayout>
-
-
     </LinearLayout>
+
 
 
 </RelativeLayout>

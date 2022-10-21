@@ -18,8 +18,8 @@ public class ServiciosActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_servicios);
 
-        agendar = findViewById(R.id.btnagendar);
-        cancelar = findViewById(R.id.btncancelar);
+        agendar = findViewById(R.id.btnAgendar);
+        cancelar = findViewById(R.id.btnCancelar);
 
         agendar.setOnClickListener(this);
         cancelar.setOnClickListener(this);
@@ -28,12 +28,12 @@ public class ServiciosActivity extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View view) {
         switch (view.getId()){
-            case R.id.btnagendar:
+            case R.id.btnAgendar:
                 i = new Intent(ServiciosActivity.this, AgendarActivity.class);
                 startActivity(i);
                 finish();
                 break;
-            case R.id.btncancelar:
+            case R.id.btnCancelar:
                 i = new Intent(ServiciosActivity.this, MenuActivity.class);
                 startActivity(i);
                 finish();

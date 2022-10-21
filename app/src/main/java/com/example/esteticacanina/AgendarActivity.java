@@ -31,7 +31,7 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
                 i = new Intent(AgendarActivity.this, MenuActivity.class);
                 startActivity(i);
                 finish();
-                Toast.makeText(AgendarActivity.this, "Poceso cancelado", Toast.LENGTH_LONG).show();
+                Toast.makeText(AgendarActivity.this, "Proceso cancelado", Toast.LENGTH_LONG).show();
                 break;
         }
     }

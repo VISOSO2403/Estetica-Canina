@@ -6,11 +6,11 @@
         android:icon="@drawable/home_icon" />
 
     <item android:id="@+id/mensaje"
-        android:title="Mensaje"
+        android:title="Mensajes"
         android:icon="@drawable/email_icon" />
 
     <item android:id="@+id/calendario"
-        android:title="Calendario"
+        android:title="Agenda"
         android:icon="@drawable/calender_icon" />
 
     <item android:id="@+id/perfil"
