@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".UserFragment">
+    tools:context=".UserFragment"
+    android:background="@color/fondo">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
@@ -22,6 +23,7 @@
                 android:id="@+id/card"
                 style="@style/AppTheme.CardView"
                 android:layout_width="match_parent"
+                app:cardCornerRadius="12dp"
                 android:layout_height="match_parent">
 
                 <RelativeLayout
@@ -36,6 +38,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/whiterect"
+
                         android:orientation="vertical"
                         android:padding="8dp">
 
@@ -81,6 +84,7 @@
                                 android:layout_gravity="center"
                                 android:gravity="center_vertical"
                                 android:text="Editar perfil"
+                                android:textColor="@color/morado"
                                 app:cornerRadius="24dp"
                                 app:strokeColor="@color/morado" />
 
