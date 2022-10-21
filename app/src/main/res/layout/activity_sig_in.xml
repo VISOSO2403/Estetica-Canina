@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -39,13 +39,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:layout_marginHorizontal="1dp"
                 android:layout_marginTop="30dp"
+                android:orientation="horizontal"
                 android:textAlignment="center">
 
                 <Button
                     android:id="@+id/btniniciar"
-                    android:layout_width="142dp"
-                    android:layout_height="55dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
                     android:background="@drawable/stylo_border_left"
                     android:text="Iniciar"
                     android:textColor="#130000"
@@ -53,8 +56,9 @@
 
                 <Button
                     android:id="@+id/btnregistrar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="55dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
                     android:background="@drawable/stylo_border_right"
                     app:backgroundTint="@color/morado"
                     android:text="Registrarse" />
@@ -174,4 +178,4 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+</ScrollView>
