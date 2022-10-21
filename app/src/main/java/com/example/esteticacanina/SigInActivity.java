@@ -66,6 +66,13 @@ public class SigInActivity extends AppCompatActivity{
         finish();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(SigInActivity.this, LoginActivity.class));
+        finish();
+    }
+
     public void crearUsuario(){
         String nom = nombre.getText().toString();
         String apell = apellido.getText().toString();
