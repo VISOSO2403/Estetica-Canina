@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".AgendarActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@id/scrollView"
+        android:padding="16dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:text="Agregar Mascota" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card"
+                style="@style/AppTheme.CardView"
+                android:layout_below="@+id/title"
+                app:cardCornerRadius="12dp">
+
+                <RelativeLayout
+                    android:id="@+id/linearLayoutCardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/contenedor"
+                        android:background="@color/whiterect"
+                        android:padding="8dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="8dp">
+
+                            <TextView
+                                android:id="@+id/tvNom"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:gravity="center_vertical"
+                                android:text="Nombre"
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
+
+                            <EditText
+                                android:id="@+id/txtNom"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/stylo_border_edittex"
+                                android:hint="Escribe tu nombre"
+                                android:textColor="@color/morado" />
+
+                            <TextView
+                                android:id="@+id/tvTel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="20dp"
+                                android:gravity="center_vertical"
+                                android:text="Teléfono"
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
+
+                            <EditText
+                                android:id="@+id/txtTel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="5dp"
+                                android:background="@drawable/stylo_border_edittex"
+                                android:hint="Escribe tu teléfono"
+                                android:textColor="@color/morado" />
+
+                            <TextView
+                                android:id="@+id/tvMasc"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="20dp"
+                                android:gravity="center_vertical"
+                                android:text="Mascota"
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <Spinner
+                                    android:id="@+id/spnrSelecMasc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_weight="30"
+                                    android:background="@drawable/stylo_border_edittex" />
+
+                                <Button
+                                    android:id="@+id/btnAgrMasc"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="15dp"
+                                    android:backgroundTint="@color/morado"
+                                    android:text="+"
+                                    app:cornerRadius="12dp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvServ"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="20dp"
+                                android:gravity="center_vertical"
+                                android:text="Servicio"
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <Spinner
+                                    android:id="@+id/spnrSelecServ"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_weight="30"
+                                    android:background="@drawable/stylo_border_edittex" />
+
+                                <Button
+                                    android:id="@+id/btnAgrServ"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="15dp"
+                                    android:backgroundTint="@color/morado"
+                                    android:text="+"
+                                    app:cornerRadius="12dp" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tvDiaCita"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="20dp"
+                                android:gravity="center_vertical"
+                                android:text="Elige dia para tu cita"
+                                android:textColor="@color/black"
+                                android:textSize="18dp" />
+
+                            <Button
+                                android:id="@+id/btnSelecDia"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="5dp"
+                                android:backgroundTint="@color/morado"
+                                android:text="Seleccionar"
+                                app:cornerRadius="12dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/scrollView"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="15dp"
+        android:gravity="bottom"
+        android:padding="5dp">
+
+        <Button
+            android:id="@+id/btnAgendar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:layout_marginHorizontal="5dp"
+            android:backgroundTint="@color/morado"
+            app:cornerRadius="24dp"
+            android:text="Agendar"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:layout_marginHorizontal="5dp"
+            style="?attr/materialButtonOutlinedStyle"
+            app:strokeColor="@color/morado"
+            app:cornerRadius="24dp"
+            android:text="Cancelar"
+            android:textColor="@color/morado"
+            android:textSize="12dp" />
+    </LinearLayout>
+
+</RelativeLayout>
