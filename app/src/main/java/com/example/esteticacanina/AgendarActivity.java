@@ -19,7 +19,7 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agendar);
 
-        cancelar = findViewById(R.id.btnCancelar);
+        cancelar = findViewById(R.id.btncancelar);
         cancelar.setOnClickListener(this);
 
     }
@@ -27,7 +27,7 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btnCancelar:
+            case R.id.btncancelar:
                 i = new Intent(AgendarActivity.this, MenuActivity.class);
                 startActivity(i);
                 finish();

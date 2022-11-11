@@ -20,8 +20,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-
-
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/card"
             style="@style/AppTheme.CardView"
@@ -41,7 +39,7 @@
                     android:padding="8dp">
 
                     <ImageView
-                        android:id="@+id/imageView"
+                        android:id="@+id/imageserv"
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -56,7 +54,7 @@
                         android:padding="8dp">
 
                         <TextView
-                            android:id="@+id/txtNomServ"
+                            android:id="@+id/txtnomserv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -66,7 +64,7 @@
                             android:textAppearance="?attr/textAppearanceHeadline6" />
 
                         <TextView
-                            android:id="@+id/txtInfoServ"
+                            android:id="@+id/txtinfoserv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
@@ -75,7 +73,7 @@
                             android:text="Informacion" />
 
                         <Button
-                            android:id="@+id/btnVerMas"
+                            android:id="@+id/btnvermas"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
