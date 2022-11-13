@@ -18,7 +18,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
        View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-       vermas = root.findViewById(R.id.btnVerMas);
+       vermas = root.findViewById(R.id.btnvermas);
 
        vermas.setOnClickListener(new View.OnClickListener() {
            @Override

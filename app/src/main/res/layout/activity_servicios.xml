@@ -14,35 +14,24 @@
         android:padding="16dp"
         android:scrollbars="none">
 
-
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/txtmiscitas"
+                android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="25dp"
-                android:text="Servicio" />
-
-
-            <TextView
-                android:id="@+id/title_servicio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="25dp"
-                android:text=" "
-
-                />
+                android:text="Servicio"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
                 style="@style/AppTheme.CardView"
                 app:cardCornerRadius="12dp"
-                android:layout_below="@+id/title_servicio">
+                android:layout_marginBottom="30dp"
+                android:layout_below="@+id/title">
 
                 <RelativeLayout
                     android:id="@+id/linearLayoutCardContent"
@@ -59,7 +48,7 @@
                         android:padding="8dp">
 
                         <ImageView
-                            android:id="@+id/imageView"
+                            android:id="@+id/imageserv"
                             android:layout_width="180dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -68,36 +57,40 @@
                             android:src="@drawable/srvc_corte_pelo" />
 
                         <LinearLayout
+                            android:id="@+id/continfo"
                             android:layout_width="match_parent"
-                            android:layout_height="187dp"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="vertical"
                             android:padding="8dp">
 
                             <TextView
-                                android:id="@+id/txtNomServ"
-                                android:layout_width="89dp"
+                                android:id="@+id/txtnomserv"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_weight="1"
                                 android:gravity="center_vertical"
+                                android:layout_marginVertical="15dp"
                                 android:text="Servicio"
                                 android:textAppearance="?attr/textAppearanceHeadline6" />
 
                             <TextView
-                                android:id="@+id/txtInfoServ"
-                                android:layout_width="98dp"
-                                android:layout_height="30dp"
+                                android:id="@+id/txtinfoserv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
                                 android:layout_weight="1"
+                                android:layout_marginVertical="15dp"
                                 android:gravity="center_vertical"
                                 android:text="Descripcion" />
 
                             <TextView
-                                android:id="@+id/txtInfoServ2"
-                                android:layout_width="98dp"
-                                android:layout_height="30dp"
+                                android:id="@+id/txtcosto"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
+                                android:layout_marginVertical="15dp"
                                 android:layout_weight="1"
                                 android:gravity="center_vertical"
                                 android:text="Costos" />
@@ -115,16 +108,16 @@
     </ScrollView>
 
     <LinearLayout
+        android:id="@+id/contbtns"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/scrollView"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:gravity="bottom"
-        android:layout_marginHorizontal="15dp"
-        android:padding="5dp">
+        android:background="@color/fondo"
+        android:gravity="bottom">
 
         <Button
-            android:id="@+id/btnAgendar"
+            android:id="@+id/btnagendar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="5"
@@ -136,7 +129,7 @@
             android:textSize="12dp" />
 
         <Button
-            android:id="@+id/btnCancelar"
+            android:id="@+id/btncancelar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="5"

@@ -29,6 +29,7 @@
                 android:id="@+id/card"
                 style="@style/AppTheme.CardView"
                 android:layout_below="@+id/title"
+                android:layout_marginBottom="30dp"
                 app:cardCornerRadius="12dp">
 
                 <RelativeLayout
@@ -51,7 +52,7 @@
                             android:padding="8dp">
 
                             <TextView
-                                android:id="@+id/tvNom"
+                                android:id="@+id/txtnom"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
@@ -61,7 +62,7 @@
                                 android:textSize="18dp" />
 
                             <EditText
-                                android:id="@+id/txtNom"
+                                android:id="@+id/etxtnom"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
@@ -70,7 +71,7 @@
                                 android:textColor="@color/morado" />
 
                             <TextView
-                                android:id="@+id/tvTel"
+                                android:id="@+id/txttel"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
@@ -82,7 +83,7 @@
                                 android:textSize="18dp" />
 
                             <EditText
-                                android:id="@+id/txtTel"
+                                android:id="@+id/etxttel"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
@@ -91,7 +92,7 @@
                                 android:textColor="@color/morado" />
 
                             <TextView
-                                android:id="@+id/tvMasc"
+                                android:id="@+id/txtmasc"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
@@ -103,12 +104,13 @@
                                 android:textSize="18dp" />
 
                             <LinearLayout
+                                android:id="@+id/contspnrmasc"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
                                 <Spinner
-                                    android:id="@+id/spnrSelecMasc"
+                                    android:id="@+id/spnrselecmasc"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
@@ -117,7 +119,7 @@
                                     android:background="@drawable/stylo_border_edittex" />
 
                                 <Button
-                                    android:id="@+id/btnAgrMasc"
+                                    android:id="@+id/btnagrmasc"
                                     android:layout_width="40dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginHorizontal="15dp"
@@ -127,7 +129,7 @@
                             </LinearLayout>
 
                             <TextView
-                                android:id="@+id/tvServ"
+                                android:id="@+id/txtserv"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
@@ -139,12 +141,13 @@
                                 android:textSize="18dp" />
 
                             <LinearLayout
+                                android:id="@+id/contspnrserv"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
                                 <Spinner
-                                    android:id="@+id/spnrSelecServ"
+                                    android:id="@+id/spnrselecserv"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
@@ -153,7 +156,7 @@
                                     android:background="@drawable/stylo_border_edittex" />
 
                                 <Button
-                                    android:id="@+id/btnAgrServ"
+                                    android:id="@+id/btnagrserv"
                                     android:layout_width="40dp"
                                     android:layout_height="wrap_content"
                                     android:layout_marginHorizontal="15dp"
@@ -163,7 +166,7 @@
                             </LinearLayout>
 
                             <TextView
-                                android:id="@+id/tvDiaCita"
+                                android:id="@+id/txtdiacita"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -175,7 +178,7 @@
                                 android:textSize="18dp" />
 
                             <Button
-                                android:id="@+id/btnSelecDia"
+                                android:id="@+id/btnselecdia"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -188,40 +191,6 @@
 
 
                     </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_below="@+id/contenedor"
-                        android:orientation="horizontal"
-                        android:layout_marginHorizontal="15dp"
-                        android:gravity="bottom"
-                        android:padding="5dp">
-
-                        <Button
-                            android:id="@+id/btnAgendar"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="5"
-                            android:layout_marginHorizontal="5dp"
-                            android:backgroundTint="@color/morado"
-                            app:cornerRadius="24dp"
-                            android:text="Agendar"
-                            android:textColor="#FFFFFF"
-                            android:textSize="12dp" />
-
-                        <Button
-                            android:id="@+id/btnCancelar"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="5"
-                            android:layout_marginHorizontal="5dp"
-                            style="?attr/materialButtonOutlinedStyle"
-                            app:strokeColor="@color/morado"
-                            app:cornerRadius="24dp"
-                            android:text="Cancelar"
-                            android:textColor="@color/morado"
-                            android:textSize="12dp" />
-                    </LinearLayout>
 
                 </RelativeLayout>
 
@@ -231,6 +200,40 @@
 
 
     </ScrollView>
+    <LinearLayout
+        android:id="@+id/contbtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/fondo"
+        android:gravity="bottom">
+
+        <Button
+            android:id="@+id/btnagendar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:layout_marginHorizontal="5dp"
+            android:backgroundTint="@color/morado"
+            app:cornerRadius="24dp"
+            android:text="Agendar"
+            android:textColor="#FFFFFF"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/btncancelar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:layout_marginHorizontal="5dp"
+            style="?attr/materialButtonOutlinedStyle"
+            app:strokeColor="@color/morado"
+            app:cornerRadius="24dp"
+            android:text="Cancelar"
+            android:textColor="@color/morado"
+            android:textSize="12dp" />
+    </LinearLayout>
 
 
 </RelativeLayout>
