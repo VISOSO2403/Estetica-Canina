@@ -19,6 +19,12 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity android:name=".AgregarMascotaActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".AgendarActivity"
             android:exported="false"
