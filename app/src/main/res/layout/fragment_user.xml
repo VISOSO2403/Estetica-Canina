@@ -11,26 +11,25 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
         android:scrollbars="none">
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
-                style="@style/AppTheme.CardView"
                 android:layout_width="match_parent"
-                app:cardCornerRadius="12dp"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
 
                 <RelativeLayout
                     android:id="@+id/linearLayoutCardContent"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/whiterect"
+                    android:layout_height="wrap_content"
+                    app:background="@color/whiterect"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -38,7 +37,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@color/whiterect"
-
                         android:orientation="vertical"
                         android:padding="8dp">
 
@@ -58,7 +56,7 @@
                             android:padding="8dp">
 
                             <TextView
-                                android:id="@+id/txtNomUsu"
+                                android:id="@+id/txtnomusu"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -68,7 +66,7 @@
                                 android:textSize="24dp" />
 
                             <TextView
-                                android:id="@+id/txtNumUsu"
+                                android:id="@+id/txtnumusu"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -76,17 +74,6 @@
                                 android:text="Número de celular"
                                 android:textSize="20dp" />
 
-                            <Button
-                                android:id="@+id/btnEditPerf"
-                                style="?attr/materialButtonOutlinedStyle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center_vertical"
-                                android:text="Editar perfil"
-                                android:textColor="@color/morado"
-                                app:cornerRadius="24dp"
-                                app:strokeColor="@color/morado" />
 
                         </LinearLayout>
 
@@ -98,7 +85,7 @@
                             android:padding="8dp">
 
                             <TextView
-                                android:id="@+id/txtNomServ"
+                                android:id="@+id/txtnomserv"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="25dp"
@@ -114,7 +101,7 @@
                             android:orientation="horizontal">
 
                             <Button
-                                android:id="@+id/btnAgrMasc"
+                                android:id="@+id/btnagrmasc"
                                 android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginHorizontal="25dp"
@@ -132,53 +119,6 @@
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_below="@+id/contenedor"
-                        android:layout_alignParentBottom="true"
-                        android:background="@color/whiterect"
-                        android:orientation="vertical"
-                        android:gravity="bottom"
-                        android:padding="5dp">>
-
-                        <Button
-                            android:id="@+id/btnAcerDe"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:text="Acerca de"
-                            android:textColor="@color/morado"
-                            android:textSize="16dp"
-                            app:cornerRadius="24dp"
-                            app:strokeColor="@color/morado" />
-
-                        <Button
-                            android:id="@+id/btnPriPoli"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:text="Privacidad y políticas"
-                            android:textColor="@color/morado"
-                            android:textSize="16dp"
-                            app:cornerRadius="24dp"
-                            app:strokeColor="@color/morado" />
-
-                        <Button
-                            android:id="@+id/btnCerrarSesion"
-                            style="?attr/materialButtonOutlinedStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginHorizontal="5dp"
-                            android:text="Cerrar sesión"
-                            android:textColor="@color/morado"
-                            android:textSize="16dp"
-                            app:cornerRadius="24dp"
-                            app:strokeColor="@color/morado" />
-                    </LinearLayout>
-
 
                 </RelativeLayout>
 
@@ -186,5 +126,54 @@
         </RelativeLayout>
 
     </ScrollView>
+
+    <LinearLayout
+        android:layout_below="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="25dp"
+        android:background="@color/whiterect"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:padding="5dp">>
+
+        <Button
+            android:id="@+id/btnacerde"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Acerca de"
+            android:textColor="@color/morado"
+            android:textSize="16dp"
+            app:cornerRadius="24dp"
+            app:strokeColor="@color/morado" />
+
+        <Button
+            android:id="@+id/btnpripoli"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Privacidad y políticas"
+            android:textColor="@color/morado"
+            android:textSize="16dp"
+            app:cornerRadius="24dp"
+            app:strokeColor="@color/morado" />
+
+        <Button
+            android:id="@+id/btncerrarsesion"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Cerrar sesión"
+            android:textColor="@color/morado"
+            android:textSize="16dp"
+            app:cornerRadius="24dp"
+            app:strokeColor="@color/morado" />
+    </LinearLayout>
 
 </RelativeLayout>
