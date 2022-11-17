@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AgregarMascotaActivity"
+    android:background="@color/fondo">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:text="Agragar Mascota" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card"
+                style="@style/AppTheme.CardView"
+                android:layout_below="@+id/title"
+                app:cardCornerRadius="12dp">
+
+                <RelativeLayout
+                    android:id="@+id/linearLayoutCardContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/contenedor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/whiterect"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/person_icon" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_marginBottom="20dp"
+                            android:padding="8dp">
+
+                            <EditText
+                                android:id="@+id/txtNomUsu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:hint="Nombre de la mascota"
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:textSize="18dp" />
+
+                            <RadioGroup
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_gravity="center">
+
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:textSize="16dp"
+                                    android:text="Perro"/>
+
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:textSize="16dp"
+                                    android:text="Gato"/>
+
+                            </RadioGroup>
+
+                            <RelativeLayout
+                                android:id="@+id/contraza"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtraza"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginVertical="5dp"
+                                    android:text="Raza"
+                                    android:textColor="@color/black"
+                                    android:textSize="16dp" />
+
+                                <Spinner
+                                    android:id="@+id/spnrselecraza"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/txtraza"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginVertical="5dp"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_weight="30"
+                                    android:background="@drawable/stylo_border_edittex" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/contgenero"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtgenero"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginVertical="5dp"
+                                    android:textSize="16dp"
+                                    android:textColor="@color/black"
+                                    android:text="Genero"/>
+                                <Spinner
+                                    android:id="@+id/spnrSelecMasc"
+                                    android:layout_below="@+id/txtgenero"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginVertical="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_weight="30"
+                                    android:background="@drawable/stylo_border_edittex" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/contpeso"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtpeso"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="5dp"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:textColor="@color/black"
+                                    android:text="Peso de la mascota"
+                                    android:textSize="16dp"/>
+
+                                <EditText
+                                    android:id="@+id/etxtpeso"
+                                    android:layout_below="@+id/txtpeso"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="5dp"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:hint="Peso aproximado en kg."/>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/contfecnac"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginVertical="5dp">
+
+                                <TextView
+                                    android:id="@+id/txtfecnac"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="5dp"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:text="Fecha de nacimiento"
+                                    android:textColor="@color/black"
+                                    android:textSize="16dp"/>
+
+                                <EditText
+                                    android:id="@+id/etxtfecnac"
+                                    android:layout_below="@+id/txtfecnac"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="5dp"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:hint="dd/mm/aaaa"/>
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/contcomport"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txtcomport"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginVertical="5dp"
+                                    android:textSize="16dp"
+                                    android:textColor="@color/black"
+                                    android:text="¿Cuál es el comportamiento de su mascota?"/>
+                                <Spinner
+                                    android:id="@+id/spnrseleccompot"
+                                    android:layout_below="@+id/txtcomport"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginVertical="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_weight="30"
+                                    android:background="@drawable/stylo_border_edittex" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/conttam"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/txttam"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginVertical="5dp"
+                                    android:textSize="16dp"
+                                    android:textColor="@color/black"
+                                    android:text="¿Cuál es el tamaño de su mascota?"/>
+                                <Spinner
+                                    android:id="@+id/spnrselectam"
+                                    android:layout_below="@+id/txttam"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginVertical="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_weight="30"
+                                    android:background="@drawable/stylo_border_edittex" />
+                                <ImageView
+                                    android:id="@+id/imagetammasc"
+                                    android:layout_below="@id/spnrselectam"
+                                    android:layout_width="350dp"
+                                    android:layout_height="100dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/tamanomascota" />
+                            </RelativeLayout>
+
+                            <Button
+                                android:id="@+id/btnragrmasc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginHorizontal="25dp"
+                                android:backgroundTint="@color/morado"
+                                app:cornerRadius="24dp"
+                                android:text="Agregar"
+                                tools:ignore="TouchTargetSizeCheck" />
+
+                            <Button
+                                android:id="@+id/btncancagrmasc"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginHorizontal="25dp"
+                                style="?attr/materialButtonOutlinedStyle"
+                                app:strokeColor="@color/morado"
+                                app:cornerRadius="24dp"
+                                android:text="Cancelar"
+                                android:textColor="@color/morado"
+                                android:textSize="12dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

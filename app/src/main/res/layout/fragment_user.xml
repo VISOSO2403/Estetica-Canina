@@ -9,29 +9,25 @@
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
-        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="16dp"
-        android:scrollbars="none">
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp">
 
         <RelativeLayout
-            android:id="@+id/contcard"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
-                style="@style/AppTheme.CardView"
                 android:layout_width="match_parent"
-                app:cardCornerRadius="12dp"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
 
                 <RelativeLayout
                     android:id="@+id/linearLayoutCardContent"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/whiterect"
+                    android:layout_height="wrap_content"
+                    app:background="@color/whiterect"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -43,7 +39,7 @@
                         android:padding="8dp">
 
                         <ImageView
-                            android:id="@+id/imageperfil"
+                            android:id="@+id/imageView"
                             android:layout_width="150dp"
                             android:layout_height="150dp"
                             android:layout_gravity="center"
@@ -65,7 +61,7 @@
                                 android:gravity="center"
                                 android:text="Nombre de usuario"
                                 android:textAppearance="?attr/textAppearanceHeadline6"
-                                android:textSize="24dp" />
+                                android:textSize="20dp" />
 
                             <TextView
                                 android:id="@+id/txtnumusu"
@@ -74,19 +70,8 @@
                                 android:layout_gravity="center"
                                 android:gravity="center_vertical"
                                 android:text="Número de celular"
-                                android:textSize="20dp" />
+                                android:textSize="16dp" />
 
-                            <Button
-                                android:id="@+id/btneditperf"
-                                style="?attr/materialButtonOutlinedStyle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center_vertical"
-                                android:text="Editar perfil"
-                                android:textColor="@color/morado"
-                                app:cornerRadius="24dp"
-                                app:strokeColor="@color/morado" />
 
                         </LinearLayout>
 
@@ -109,7 +94,6 @@
                         </LinearLayout>
 
                         <LinearLayout
-                            android:id="@+id/contagrmasc"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
@@ -129,54 +113,55 @@
                                 android:text="Agregar mascota"
                                 android:textSize="14dp" />
                         </LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/contbtns"
-                            android:layout_below="@+id/contagrmasc"
+                        <ScrollView
+                            android:id="@+id/contenedor2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:gravity="bottom"
-                            android:padding="5dp">
+                            android:layout_marginHorizontal="20dp"
+                            android:layout_below="@+id/contenedor"
+                            android:backgroundTint="@color/whiterect"
+                            android:scrollbars="none"
+                            android:orientation="vertical">
 
-                            <Button
-                                android:id="@+id/btnacerde"
-                                style="?attr/materialButtonOutlinedStyle"
+                            <LinearLayout
+                                android:id="@+id/contenedor4"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="5dp"
-                                android:text="Acerca de"
-                                android:textColor="@color/morado"
-                                android:textSize="16dp"
-                                app:cornerRadius="24dp"
-                                app:strokeColor="@color/morado" />
+                                android:layout_height="match_parent"
+                                android:layout_below="@+id/contenedor3"
+                                android:orientation="vertical">
 
-                            <Button
-                                android:id="@+id/btnpripoli"
-                                style="?attr/materialButtonOutlinedStyle"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="5dp"
-                                android:text="Privacidad y políticas"
-                                android:textColor="@color/morado"
-                                android:textSize="16dp"
-                                app:cornerRadius="24dp"
-                                app:strokeColor="@color/morado" />
+                                <!---https://www.develou.com/android-listas-adaptadores/#Anadir_ListView_al_layout-->
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="180dp">
+                                    <FrameLayout
 
-                            <Button
-                                android:id="@+id/btncerrarsesion"
-                                style="?attr/materialButtonOutlinedStyle"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="5dp"
-                                android:text="Cerrar sesión"
-                                android:textColor="@color/morado"
-                                android:textSize="16dp"
-                                app:cornerRadius="24dp"
-                                app:strokeColor="@color/morado" />
-                        </LinearLayout>
+                                        android:id="@+id/lista"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        tools:context="com.herprogramacion.crmleads.LeadsFragment">
+
+                                        <ListView
+                                            android:id="@+id/contenedor_list"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:divider="@null" />
+
+
+                                    </FrameLayout>
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+
+                        </ScrollView>
+
+
 
                     </LinearLayout>
+
 
                 </RelativeLayout>
 
@@ -185,6 +170,52 @@
 
     </ScrollView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/whiterect"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:padding="5dp">>
 
+        <Button
+            android:id="@+id/btnacerde"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Acerca de"
+            android:textColor="@color/morado"
+            android:textSize="14dp"
+            app:cornerRadius="24dp"
+            app:strokeColor="@color/morado" />
+
+        <Button
+            android:id="@+id/btnpripoli"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Privacidad y políticas"
+            android:textColor="@color/morado"
+            android:textSize="14dp"
+            app:cornerRadius="24dp"
+            app:strokeColor="@color/morado" />
+
+        <Button
+            android:id="@+id/btncerrarsesion"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:text="Cerrar sesión"
+            android:textColor="@color/morado"
+            android:textSize="14dp"
+            app:cornerRadius="24dp"
+            app:strokeColor="@color/morado" />
+    </LinearLayout>
 
 </RelativeLayout>
