@@ -8,91 +8,28 @@
     android:id="@+id/contenedor"
     tools:context=".HomeFragment">
 
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Servicios"
+        android:textSize="25dp" />
+
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/title"
         android:padding="16dp"
         android:scrollbars="none">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card"
-            style="@style/AppTheme.CardView"
-            app:cardCornerRadius="12dp">
-
-            <RelativeLayout
-                android:id="@+id/linearLayoutCardContent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/whiterect"
-                    android:orientation="horizontal"
-                    android:padding="8dp">
-
-                    <ImageView
-                        android:id="@+id/imageserv"
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_margin="8dp"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/srvc_cita_medica" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="8dp">
-
-                        <TextView
-                            android:id="@+id/txtnomserv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:gravity="center_vertical"
-                            android:text="Servicio"
-                            android:textAppearance="?attr/textAppearanceHeadline6" />
-
-                        <TextView
-                            android:id="@+id/txtinfoserv"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:gravity="center_vertical"
-                            android:text="Informacion" />
-
-                        <Button
-                            android:id="@+id/btnvermas"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="15dp"
-                            android:backgroundTint="@color/morado"
-                            app:cornerRadius="24dp"
-                            android:elevation="50dp"
-                            android:text="Ver más"
-                            android:textColor="#FFFFFF"
-                            android:textSize="12dp" />
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-
-            </RelativeLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
     </ScrollView>
 
