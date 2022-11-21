@@ -177,6 +177,14 @@
                                 android:textColor="@color/black"
                                 android:textSize="18dp" />
 
+                            <TextView
+                                android:id="@+id/etxtdiacita"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:textSize="18dp"
+                                android:text="" />
+
                             <Button
                                 android:id="@+id/btnselecdia"
                                 android:layout_width="wrap_content"
@@ -184,7 +192,8 @@
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
                                 android:backgroundTint="@color/morado"
-                                android:text="Seleccionar"
+                                android:text="Seleccionar dia"
+                                android:onClick="abrirCalendario"
                                 app:cornerRadius="12dp" />
 
                         </LinearLayout>

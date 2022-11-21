@@ -29,4 +29,8 @@
         <!-- estilo del menú adecuado para modo claro y modo oscuro -->
         <item name="popupTheme">@style/Theme.MaterialComponents.DayNight</item>
     </style>
+    
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/morado</item>
+    </style>
 </resources>
