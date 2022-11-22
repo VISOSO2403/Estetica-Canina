@@ -61,179 +61,107 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:layout_marginBottom="20dp"
+                            android:orientation="vertical"
                             android:padding="8dp">
-
-                            <EditText
-                                android:id="@+id/txtNomUsu"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center"
-                                android:hint="Nombre de la mascota"
-                                android:textAppearance="?attr/textAppearanceHeadline6"
-                                android:textSize="18dp" />
 
                             <RadioGroup
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:layout_gravity="center">
+                                android:layout_gravity="center"
+                                android:orientation="horizontal">
 
                                 <RadioButton
+                                    android:id="@+id/rbtnperro"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="10"
                                     android:layout_marginHorizontal="20dp"
-                                    android:textSize="16dp"
-                                    android:text="Perro"/>
+                                    android:checked="true"
+                                    android:layout_weight="10"
+                                    android:text="Perro"
+                                    android:textSize="16dp" />
 
                                 <RadioButton
+                                    android:id="@+id/rbntgato"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_weight="10"
                                     android:layout_marginHorizontal="20dp"
-                                    android:textSize="16dp"
-                                    android:text="Gato"/>
+                                    android:checked="false"
+                                    android:layout_weight="10"
+                                    android:text="Gato"
+                                    android:textSize="16dp" />
 
                             </RadioGroup>
 
-                            <RelativeLayout
-                                android:id="@+id/contraza"
+                            <RadioGroup
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal">
 
-                                <TextView
-                                    android:id="@+id/txtraza"
+                                <RadioButton
+                                    android:id="@+id/rbtnmacho"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginHorizontal="20dp"
-                                    android:layout_marginVertical="5dp"
-                                    android:text="Raza"
-                                    android:textColor="@color/black"
+                                    android:checked="true"
+                                    android:layout_weight="10"
+                                    android:text="Macho"
                                     android:textSize="16dp" />
 
-                                <Spinner
-                                    android:id="@+id/spnrselecraza"
-                                    android:layout_width="match_parent"
+                                <RadioButton
+                                    android:id="@+id/rbtnhembra"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@+id/txtraza"
-                                    android:layout_gravity="center_vertical"
                                     android:layout_marginHorizontal="20dp"
-                                    android:layout_marginVertical="5dp"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_weight="30"
-                                    android:background="@drawable/stylo_border_edittex" />
+                                    android:checked="false"
+                                    android:layout_weight="10"
+                                    android:text="Hembra"
+                                    android:textSize="16dp" />
 
-                            </RelativeLayout>
+                            </RadioGroup>
+
+
 
                             <RelativeLayout
                                 android:id="@+id/contgenero"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
 
-                                <TextView
-                                    android:id="@+id/txtgenero"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginHorizontal="20dp"
-                                    android:layout_marginVertical="5dp"
-                                    android:textSize="16dp"
-                                    android:textColor="@color/black"
-                                    android:text="Genero"/>
-                                <Spinner
-                                    android:id="@+id/spnrSelecMasc"
-                                    android:layout_below="@+id/txtgenero"
-                                    android:layout_marginHorizontal="20dp"
-                                    android:layout_marginVertical="5dp"
+                                <EditText
+                                    android:id="@+id/etxtnombremasc"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_weight="30"
-                                    android:background="@drawable/stylo_border_edittex" />
-
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                android:id="@+id/contpeso"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                                <TextView
-                                    android:id="@+id/txtpeso"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginVertical="5dp"
+                                    android:layout_gravity="center"
                                     android:layout_marginHorizontal="20dp"
-                                    android:textColor="@color/black"
-                                    android:text="Peso de la mascota"
-                                    android:textSize="16dp"/>
+                                    android:layout_marginVertical="5dp"
+                                    android:gravity="center"
+                                    android:hint="Nombre"
+                                    android:textAppearance="?attr/textAppearanceHeadline6"
+                                    android:textSize="18dp" />
+
+
 
                                 <EditText
                                     android:id="@+id/etxtpeso"
-                                    android:layout_below="@+id/txtpeso"
+                                    android:inputType="numberDecimal"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginVertical="5dp"
+                                    android:layout_below="@+id/etxtnombremasc"
+                                    android:gravity="center"
                                     android:layout_marginHorizontal="20dp"
-                                    android:hint="Peso aproximado en kg."/>
-
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                android:id="@+id/contfecnac"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginVertical="5dp">
-
-                                <TextView
-                                    android:id="@+id/txtfecnac"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
                                     android:layout_marginVertical="5dp"
-                                    android:layout_marginHorizontal="20dp"
-                                    android:text="Fecha de nacimiento"
-                                    android:textColor="@color/black"
-                                    android:textSize="16dp"/>
+                                    android:hint="Peso aproximado en kg." />
 
                                 <EditText
-                                    android:id="@+id/etxtfecnac"
-                                    android:layout_below="@+id/txtfecnac"
+                                    android:id="@+id/etxtedad"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginVertical="5dp"
-                                    android:layout_marginHorizontal="20dp"
-                                    android:hint="dd/mm/aaaa"/>
-
-                            </RelativeLayout>
-
-                            <RelativeLayout
-                                android:id="@+id/contcomport"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
-
-                                <TextView
-                                    android:id="@+id/txtcomport"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:layout_below="@+id/etxtpeso"
                                     android:layout_marginHorizontal="20dp"
                                     android:layout_marginVertical="5dp"
-                                    android:textSize="16dp"
-                                    android:textColor="@color/black"
-                                    android:text="¿Cuál es el comportamiento de su mascota?"/>
-                                <Spinner
-                                    android:id="@+id/spnrseleccompot"
-                                    android:layout_below="@+id/txtcomport"
-                                    android:layout_marginHorizontal="20dp"
-                                    android:layout_marginVertical="5dp"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_weight="30"
-                                    android:background="@drawable/stylo_border_edittex" />
+                                    android:hint="Edad" />
 
                             </RelativeLayout>
 
@@ -242,31 +170,23 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
 
-                                <TextView
-                                    android:id="@+id/txttam"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginHorizontal="20dp"
-                                    android:layout_marginVertical="5dp"
-                                    android:textSize="16dp"
-                                    android:textColor="@color/black"
-                                    android:text="¿Cuál es el tamaño de su mascota?"/>
                                 <Spinner
-                                    android:id="@+id/spnrselectam"
-                                    android:layout_below="@+id/txttam"
-                                    android:layout_marginHorizontal="20dp"
-                                    android:layout_marginVertical="5dp"
+                                    android:id="@+id/spnrtamanio"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
+                                    android:layout_marginHorizontal="20dp"
+                                    android:layout_marginVertical="5dp"
                                     android:layout_marginLeft="5dp"
                                     android:layout_weight="30"
-                                    android:background="@drawable/stylo_border_edittex" />
+                                    android:prompt="@string/seleccione_un_tamaño"
+                                    android:spinnerMode="dialog" />
+
                                 <ImageView
                                     android:id="@+id/imagetammasc"
-                                    android:layout_below="@id/spnrselectam"
                                     android:layout_width="350dp"
                                     android:layout_height="100dp"
+                                    android:layout_below="@id/spnrtamanio"
                                     android:layout_gravity="center"
                                     android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
@@ -277,36 +197,32 @@
                             </RelativeLayout>
 
                             <Button
-                                android:id="@+id/btnragrmasc"
+                                android:id="@+id/btnagremasc"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="20dp"
                                 android:layout_marginHorizontal="25dp"
+                                android:layout_marginTop="20dp"
                                 android:backgroundTint="@color/morado"
-                                app:cornerRadius="24dp"
                                 android:text="Agregar"
+                                app:cornerRadius="24dp"
                                 tools:ignore="TouchTargetSizeCheck" />
 
                             <Button
                                 android:id="@+id/btncancagrmasc"
+                                style="?attr/materialButtonOutlinedStyle"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
                                 android:layout_marginHorizontal="25dp"
-                                style="?attr/materialButtonOutlinedStyle"
-                                app:strokeColor="@color/morado"
-                                app:cornerRadius="24dp"
+                                android:layout_marginTop="5dp"
                                 android:text="Cancelar"
                                 android:textColor="@color/morado"
-                                android:textSize="12dp" />
+                                android:textSize="12dp"
+                                app:cornerRadius="24dp"
+                                app:strokeColor="@color/morado" />
 
                         </LinearLayout>
 
-
                     </LinearLayout>
-
-
-
 
                 </RelativeLayout>
 
