@@ -109,29 +109,6 @@
                                 android:textSize="14dp" />
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:layout_marginHorizontal="20dp">
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="7"
-                                android:gravity="center"
-                                android:text="Agregar mascota"
-                                android:textSize="14dp" />
-                            <Button
-                                android:id="@+id/btnavermasc"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="4"
-                                android:layout_marginHorizontal="18dp"
-                                android:backgroundTint="@color/morado"
-                                android:text="ver mas"
-                                app:cornerRadius="12dp" />
-                        </LinearLayout>
                         <ScrollView
                             android:id="@+id/contenedor2"
                             android:layout_width="match_parent"
