@@ -34,6 +34,7 @@
                         android:id="@+id/contenedor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginVertical="50dp"
                         android:background="@color/whiterect"
                         android:orientation="vertical"
                         android:padding="8dp">
@@ -63,14 +64,7 @@
                                 android:textAppearance="?attr/textAppearanceHeadline6"
                                 android:textSize="20dp" />
 
-                            <TextView
-                                android:id="@+id/txtnumusu"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:gravity="center_vertical"
-                                android:text="Número de celular"
-                                android:textSize="16dp" />
+
 
 
                         </LinearLayout>
@@ -96,6 +90,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="20dp"
                             android:orientation="horizontal">
 
                             <Button
@@ -112,6 +107,30 @@
                                 android:layout_height="wrap_content"
                                 android:text="Agregar mascota"
                                 android:textSize="14dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginHorizontal="20dp">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="7"
+                                android:gravity="center"
+                                android:text="Agregar mascota"
+                                android:textSize="14dp" />
+                            <Button
+                                android:id="@+id/btnavermasc"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="4"
+                                android:layout_marginHorizontal="18dp"
+                                android:backgroundTint="@color/morado"
+                                android:text="ver mas"
+                                app:cornerRadius="12dp" />
                         </LinearLayout>
                         <ScrollView
                             android:id="@+id/contenedor2"

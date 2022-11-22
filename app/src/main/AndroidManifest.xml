@@ -13,7 +13,7 @@
         android:theme="@style/Theme.EsteticaCanina"
         tools:targetApi="31">
         <activity
-            android:name=".Pet_single"
+            android:name=".MascotaActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
