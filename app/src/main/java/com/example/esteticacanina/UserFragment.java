@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class UserFragment extends Fragment {
 
-    Button agremasc, cerrarSesion;
+    Button agremasc, cerrarSesion, vermasc;
     FirebaseAuth mAuth;
     FirebaseUser mUser;
     @SuppressLint("MissingInflatedId")
@@ -30,6 +30,7 @@ public class UserFragment extends Fragment {
         mUser = FirebaseAuth.getInstance().getCurrentUser();
 
         //Variables de botones
+        vermasc = root.findViewById(R.id.btnavermasc);
         agremasc = root.findViewById(R.id.btnagrmasc);
         cerrarSesion = root.findViewById(R.id.btncerrarsesion);
 
@@ -37,6 +38,15 @@ public class UserFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), AgregarMascotaActivity.class);
+                startActivity(i);
+                getActivity().finish();
+            }
+        });
+
+        vermasc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), MascotaActivity.class);
                 startActivity(i);
                 getActivity().finish();
             }
