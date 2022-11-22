@@ -2,4 +2,6 @@
     <string name="app_name">Estetica Canina</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="seleccione_un_sexo">Seleccione un sexo</string>
+    <string name="seleccione_un_tamaño">Seleccione un tamaño</string>
 </resources>

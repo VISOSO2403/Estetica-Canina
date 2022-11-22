@@ -28,7 +28,7 @@ public class ServicioAdapter extends FirestoreRecyclerAdapter<Servicio, Servicio
     @Override
     protected void onBindViewHolder(@NonNull ViewHolder viewHolder, int i, @NonNull Servicio Servicio) {
         viewHolder.txtnomserv.setText(Servicio.getNombre());
-        viewHolder.txtprecio.setText("$"+Servicio.getPrecio());
+        viewHolder.txtprecio.setText("$" + Servicio.getPrecio());
     }
 
     @NonNull
