@@ -132,29 +132,19 @@
 
                                 <!---https://www.develou.com/android-listas-adaptadores/#Anadir_ListView_al_layout-->
                                 <LinearLayout
-                                    android:layout_width="wrap_content"
+                                    android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="180dp">
-                                    <FrameLayout
 
-                                        android:id="@+id/lista"
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/recycle"
                                         android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        tools:context="com.herprogramacion.crmleads.LeadsFragment">
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1" />
 
-                                        <ListView
-                                            android:id="@+id/contenedor_list"
-                                            android:layout_width="match_parent"
-                                            android:layout_height="match_parent"
-                                            android:divider="@null" />
-
-
-                                    </FrameLayout>
                                 </LinearLayout>
 
-
                             </LinearLayout>
-
 
                         </ScrollView>
 
