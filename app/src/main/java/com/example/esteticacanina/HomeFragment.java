@@ -40,7 +40,7 @@ public class HomeFragment extends Fragment {
 
         FirestoreRecyclerOptions<Servicio> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<Servicio>().setQuery(query,Servicio.class).build();
-        mAdapter = new ServicioAdapter(firestoreRecyclerOptions);
+        mAdapter = new ServicioAdapter(firestoreRecyclerOptions, getActivity());
         mAdapter.notifyDataSetChanged();
         mRecycler.setAdapter(mAdapter);
         /*
