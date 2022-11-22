@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo"
+    tools:context=".MascotaActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:padding="16dp">
+
+
+        <LinearLayout
+            android:id="@+id/contenedor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="25dp"
+                android:text="Datos de la mascota" />
+
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card"
+                style="@style/AppTheme.CardView"
+                android:layout_below="@+id/title"
+                app:cardCornerRadius="12dp">
+
+                <LinearLayout
+                    android:id="@+id/contenedor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/contenedor"
+                    android:background="@drawable/stylo_border_rect"
+                    android:backgroundTint="@color/whiterect"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/contenedor3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/whiterect"
+                        android:gravity="right">
+
+                        <Button
+                            android:id="@+id/btncanc"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:text="x"
+                            android:textColor="@color/white"
+                            app:backgroundTint="@color/morado"
+                            android:textAllCaps="false"
+                            android:textSize="20dp"
+                            android:background="@drawable/stylo_border_mix"/>
+
+
+                        <LinearLayout
+                            android:id="@+id/contenedor_datos"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="15dp"
+                            android:orientation="vertical"
+                            android:padding="8dp"
+                            app:cornerRadius="24dp">
+
+                                <ImageView
+                                    android:id="@+id/imageView"
+                                    android:layout_width="150dp"
+                                    android:layout_height="150dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_marginEnd="8dp"
+                                    android:layout_marginBottom="8dp"
+                                    android:adjustViewBounds="true"
+                                    android:src="@drawable/person_icon" />
+
+                                <LinearLayout
+                                    android:id="@+id/contenedordatos"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:background="#DFD1E9"
+                                    android:layout_marginBottom="20dp"
+                                    android:padding="8dp">
+
+                                    <TextView
+                                        android:id="@+id/txtnommasc"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="5dp"
+                                        android:text="Nombre "
+                                        android:textSize="18dp" />
+
+                                    <TextView
+                                        android:id="@+id/txttipomasc"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="5dp"
+                                        android:text="Tipo "
+                                        android:textSize="18dp" />
+
+
+                                    <TextView
+                                        android:id="@+id/txtsexoasc"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="5dp"
+                                        android:text="Sexo "
+                                        android:textSize="18dp" />
+
+                                    <TextView
+                                        android:id="@+id/txtpesomasc"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="5dp"
+                                        android:text="Peso "
+                                        android:textSize="18dp" />
+
+
+                                    <TextView
+                                        android:id="@+id/txttammasc"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginVertical="5dp"
+                                        android:text="Tamaño"
+                                        android:textSize="18dp" />
+
+
+
+                                </LinearLayout>
+                    </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

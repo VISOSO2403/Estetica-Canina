@@ -13,7 +13,7 @@ import android.widget.Button;
 
 public class UserFragment extends Fragment {
 
-    Button agremasc;
+    Button agremasc, vermasc;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -23,11 +23,21 @@ public class UserFragment extends Fragment {
 
 
         agremasc = root.findViewById(R.id.btnagrmasc);
+        vermasc = root.findViewById(R.id.btnvermasc);
 
         agremasc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), AgregarMascotaActivity.class);
+                startActivity(i);
+                getActivity().finish();
+            }
+        });
+
+        vermasc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), MascotaActivity.class);
                 startActivity(i);
                 getActivity().finish();
             }
