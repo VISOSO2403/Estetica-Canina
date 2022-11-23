@@ -48,7 +48,7 @@ public class UserFragment extends Fragment {
         FirestoreRecyclerOptions<Pet> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<Pet>().setQuery(query, Pet.class).build();
 
-        petAdapter = new PetAdapter(firestoreRecyclerOptions);
+        petAdapter = new PetAdapter(firestoreRecyclerOptions, getActivity());
         petAdapter.notifyDataSetChanged();
         recyclerView.setAdapter(petAdapter);
 
