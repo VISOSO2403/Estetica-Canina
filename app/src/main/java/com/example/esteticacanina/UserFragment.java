@@ -47,7 +47,6 @@ public class UserFragment extends Fragment {
 
         FirestoreRecyclerOptions<Pet> firestoreRecyclerOptions =
                 new FirestoreRecyclerOptions.Builder<Pet>().setQuery(query, Pet.class).build();
-
         petAdapter = new PetAdapter(firestoreRecyclerOptions, getActivity());
         petAdapter.notifyDataSetChanged();
         recyclerView.setAdapter(petAdapter);
@@ -86,10 +85,10 @@ public class UserFragment extends Fragment {
         super.onStart();
         petAdapter.startListening();
     }
-
     @Override
     public void onStop() {
         super.onStop();
+        petAdapter.stopListening();
     }
 
     //Metodo Cerrar Sesión
