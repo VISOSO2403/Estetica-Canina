@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@id/scrollView"
-        android:padding="16dp">
+        android:padding="8dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -23,14 +23,16 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="25dp"
-                android:text="Confirmar Datos" />
+                android:layout_marginTop="5dp"
+                android:text="Confirmar Datos"
+                android:textAppearance="?attr/textAppearanceHeadline6"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
                 style="@style/AppTheme.CardView"
                 android:layout_below="@+id/title"
                 android:layout_marginBottom="30dp"
-                app:cardCornerRadius="12dp">
+                app:cardCornerRadius="24dp">
 
                 <RelativeLayout
                     android:id="@+id/linearLayoutCardContent"
@@ -43,13 +45,27 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/contenedor"
                         android:background="@color/whiterect"
-                        android:padding="8dp">
+                        android:padding="8dp"
+                        android:orientation="vertical"
+                        android:gravity="right">
+
+                        <Button
+                            android:id="@+id/btncanc"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:text="x"
+                            android:textColor="@color/white"
+                            app:backgroundTint="@color/morado"
+                            android:textAllCaps="false"
+                            android:textSize="20dp"
+                            android:background="@drawable/stylo_border_mix"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:padding="8dp">
+
 
                             <TextView
                                 android:id="@+id/txtnom"
@@ -191,15 +207,31 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="5dp"
+                                android:layout_marginBottom="30dp"
                                 android:backgroundTint="@color/morado"
                                 android:text="Seleccionar dia"
                                 android:onClick="abrirCalendario"
-                                app:cornerRadius="12dp" />
+                                app:cornerRadius="12dp"
+                                android:textSize="12dp"/>
+
 
                         </LinearLayout>
 
 
+                        <Button
+                            android:id="@+id/btnagendar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="5dp"
+                            android:backgroundTint="@color/morado"
+                            app:cornerRadius="24dp"
+                            android:text="Agendar"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12dp" />
+
                     </LinearLayout>
+
+
 
                 </RelativeLayout>
 
@@ -209,40 +241,8 @@
 
 
     </ScrollView>
-    <LinearLayout
-        android:id="@+id/contbtns"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="@color/fondo"
-        android:gravity="bottom">
 
-        <Button
-            android:id="@+id/btnagendar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:layout_marginHorizontal="5dp"
-            android:backgroundTint="@color/morado"
-            app:cornerRadius="24dp"
-            android:text="Agendar"
-            android:textColor="#FFFFFF"
-            android:textSize="12dp" />
 
-        <Button
-            android:id="@+id/btncancelar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:layout_marginHorizontal="5dp"
-            style="?attr/materialButtonOutlinedStyle"
-            app:strokeColor="@color/morado"
-            app:cornerRadius="24dp"
-            android:text="Cancelar"
-            android:textColor="@color/morado"
-            android:textSize="12dp" />
-    </LinearLayout>
 
 
 </RelativeLayout>

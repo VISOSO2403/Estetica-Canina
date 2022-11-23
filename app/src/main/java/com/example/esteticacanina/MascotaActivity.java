@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class MascotaActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button canc;
+    Button cancelar;
     Intent i;
 
     @Override
@@ -18,9 +18,9 @@ public class MascotaActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mascota);
 
-        canc = findViewById(R.id.btncanc);
+        cancelar = findViewById(R.id.btncanc);
 
-        canc.setOnClickListener(this);
+        cancelar.setOnClickListener(this);
     }
 
     @Override

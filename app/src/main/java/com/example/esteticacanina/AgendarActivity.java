@@ -31,7 +31,7 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_agendar);
         diaselect = findViewById(R.id.etxtdiacita);
 
-        cancelar = findViewById(R.id.btncancelar);
+        cancelar = findViewById(R.id.btncanc);
 
 
         cancelar.setOnClickListener(this);
@@ -41,7 +41,7 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btncancelar:
+            case R.id.btncanc:
                 i = new Intent(AgendarActivity.this, MenuActivity.class);
                 startActivity(i);
                 finish();

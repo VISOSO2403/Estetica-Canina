@@ -3,6 +3,7 @@ package com.example.esteticacanina;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,7 @@ public class ServiciosActivity extends AppCompatActivity implements View.OnClick
 
     private FirebaseFirestore mfirestore;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +38,7 @@ public class ServiciosActivity extends AppCompatActivity implements View.OnClick
         txtcosto = (TextView)findViewById(R.id.txtcosto);
 
         agendar = findViewById(R.id.btnagendar);
-        cancelar = findViewById(R.id.btncancelar);
+        cancelar = findViewById(R.id.btncanc);
 
         agendar.setOnClickListener(this);
         cancelar.setOnClickListener(this);
@@ -71,7 +73,7 @@ public class ServiciosActivity extends AppCompatActivity implements View.OnClick
                 startActivity(i);
                 finish();
                 break;
-            case R.id.btncancelar:
+            case R.id.btncanc:
                 i = new Intent(ServiciosActivity.this, MenuActivity.class);
                 startActivity(i);
                 finish();

@@ -3,6 +3,7 @@ package com.example.esteticacanina;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,6 +43,7 @@ public class AgregarMascotaActivity extends AppCompatActivity implements View.On
 
     private FirebaseFirestore firebaseFirestore;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,8 +90,8 @@ public class AgregarMascotaActivity extends AppCompatActivity implements View.On
         });
 
         //Buttons
-        cancelar = findViewById(R.id.btncancagrmasc);
         agregar = findViewById(R.id.btnagremasc);
+        cancelar = findViewById(R.id.btncanc);
         cancelar.setOnClickListener(this);
         agregar.setOnClickListener(this);
 
@@ -126,7 +128,7 @@ public class AgregarMascotaActivity extends AppCompatActivity implements View.On
                     Toast.makeText(this, "Mascota agregada", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case R.id.btncancagrmasc:
+            case R.id.btncanc:
                 startActivity(new Intent(AgregarMascotaActivity.this, MenuActivity.class));
                 finish();
                 Toast.makeText(AgregarMascotaActivity.this, "Proceso cancelado", Toast.LENGTH_LONG).show();

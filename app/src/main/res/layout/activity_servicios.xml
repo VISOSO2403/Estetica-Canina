@@ -11,7 +11,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:padding="8dp"
         android:scrollbars="none">
 
         <RelativeLayout
@@ -24,12 +24,14 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="25dp"
+                android:layout_marginTop="5dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
                 android:text="Servicio"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
                 style="@style/AppTheme.CardView"
-                app:cardCornerRadius="12dp"
+                app:cardCornerRadius="24dp"
                 android:layout_marginBottom="30dp"
                 android:layout_below="@+id/title">
 
@@ -45,7 +47,19 @@
                         android:layout_height="wrap_content"
                         android:background="@color/whiterect"
                         android:orientation="vertical"
-                        android:padding="8dp">
+                        android:padding="8dp"
+                        android:gravity="right">
+
+                        <Button
+                            android:id="@+id/btncanc"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:text="x"
+                            android:textColor="@color/white"
+                            app:backgroundTint="@color/morado"
+                            android:textAllCaps="false"
+                            android:textSize="20dp"
+                            android:background="@drawable/stylo_border_mix"/>
 
                         <ImageView
                             android:id="@+id/imageserv"
@@ -83,7 +97,7 @@
                                 android:layout_weight="1"
                                 android:layout_marginVertical="15dp"
                                 android:gravity="center_vertical"
-                                android:text="Descripcion" />
+                                android:text="Descripción" />
 
                             <TextView
                                 android:id="@+id/txtcosto"
@@ -94,6 +108,18 @@
                                 android:layout_weight="1"
                                 android:gravity="center_vertical"
                                 android:text="Costos" />
+
+                            <Button
+                                android:id="@+id/btnagendar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:layout_marginHorizontal="5dp"
+                                android:backgroundTint="@color/morado"
+                                app:cornerRadius="24dp"
+                                android:text="Agendar"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12dp" />
 
                         </LinearLayout>
 
@@ -107,39 +133,5 @@
 
     </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/contbtns"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="@color/fondo"
-        android:gravity="bottom">
-
-        <Button
-            android:id="@+id/btnagendar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:layout_marginHorizontal="5dp"
-            android:backgroundTint="@color/morado"
-            app:cornerRadius="24dp"
-            android:text="Agendar"
-            android:textColor="#FFFFFF"
-            android:textSize="12dp" />
-
-        <Button
-            android:id="@+id/btncancelar"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:layout_marginHorizontal="5dp"
-            style="?attr/materialButtonOutlinedStyle"
-            app:strokeColor="@color/morado"
-            app:cornerRadius="24dp"
-            android:text="Cancelar"
-            android:textColor="@color/morado"
-            android:textSize="12dp" />
-    </LinearLayout>
 
 </RelativeLayout>

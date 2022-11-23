@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#E5E7EB"
+    android:background="@color/fondo"
     tools:context=".CalenderFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -13,7 +13,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:padding="8dp"
         android:scrollbars="none">
 
         <RelativeLayout
@@ -26,6 +26,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Mis Citas"
+                android:layout_marginTop="5dp"
+                android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textSize="25dp" />
 
             <com.google.android.material.card.MaterialCardView
@@ -33,7 +35,7 @@
                 style="@style/AppTheme.CardView"
                 android:layout_below="@+id/title"
                 android:layout_marginBottom="30dp"
-                app:cardCornerRadius="12dp">
+                app:cardCornerRadius="24dp">
 
                 <RelativeLayout
                     android:id="@+id/linearLayoutCardContent"

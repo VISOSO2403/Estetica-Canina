@@ -27,7 +27,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="25dp"
-                android:text="Notificaciones" />
+                android:layout_marginTop="5dp"
+                android:text="Notificaciones"
+                android:textAppearance="?attr/textAppearanceHeadline6"/>
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
@@ -43,7 +45,20 @@
                     android:layout_below="@+id/contenedor"
                     android:background="@drawable/stylo_border_rect"
                     android:backgroundTint="@color/whiterect"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:gravity="right">
+
+                    <Button
+                        android:id="@+id/btncanc"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:text="x"
+                        android:textColor="@color/white"
+                        app:backgroundTint="@color/morado"
+                        android:textAllCaps="false"
+                        android:textSize="20dp"
+                        android:background="@drawable/stylo_border_mix"/>
 
                     <RelativeLayout
                         android:id="@+id/contnotif"
@@ -62,18 +77,21 @@
                             android:layout_marginBottom="10dp"
                             android:text="Hemos recibido tu solicitud para tu cita, los horarios disponibles para ese dia son:"
                             android:textColor="@color/black"
-                            android:textSize="20dp" />
+                            android:textSize="18dp" />
 
                         <TextView
                             android:id="@+id/txtinstruccion"
-                            android:layout_below="@+id/txtmensaje"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="15dp"
-                            android:layout_margin="10dp"
-                            android:textColor="@color/black"
+                            android:layout_below="@+id/txtmensaje"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Favor de elegir un horario y confirmar tu cita."
                             android:textAlignment="center"
-                            android:text="Favor de elegir un horario y confirmar tu cita."/>
+                            android:textColor="@color/black"
+                            android:textSize="15dp" />
 
                         <LinearLayout
                             android:id="@+id/contopcns"
@@ -106,6 +124,19 @@
                                 android:textColor="@color/morado"
                                 android:textSize="12dp"/>
 
+                            <Button
+                                android:id="@+id/btnconfirmar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="5"
+                                android:layout_marginHorizontal="5dp"
+                                android:layout_marginTop="30dp"
+                                android:backgroundTint="@color/morado"
+                                app:cornerRadius="24dp"
+                                android:text="Confirmar"
+                                android:textColor="#FFFFFF"
+                                android:textSize="12dp" />
+
                         </LinearLayout>
                     </RelativeLayout>
 
@@ -117,40 +148,6 @@
 
     </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/contbtns"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal"
-        android:background="@color/fondo"
-        android:gravity="bottom">
-
-        <Button
-            android:id="@+id/btnconfirmar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:layout_marginHorizontal="5dp"
-            android:backgroundTint="@color/morado"
-            app:cornerRadius="24dp"
-            android:text="Confirmar"
-            android:textColor="#FFFFFF"
-            android:textSize="12dp" />
-
-        <Button
-            android:id="@+id/btncancelar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:layout_marginHorizontal="5dp"
-            style="?attr/materialButtonOutlinedStyle"
-            app:strokeColor="@color/morado"
-            app:cornerRadius="24dp"
-            android:text="Cancelar"
-            android:textColor="@color/morado"
-            android:textSize="12dp"/>
-    </LinearLayout>
 
 
 </RelativeLayout>
