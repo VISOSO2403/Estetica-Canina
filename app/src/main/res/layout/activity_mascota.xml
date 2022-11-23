@@ -13,7 +13,6 @@
         android:id="@+id/scrollView"
         android:padding="16dp">
 
-
         <LinearLayout
             android:id="@+id/contenedor"
             android:layout_width="match_parent"
@@ -96,7 +95,15 @@
                                 android:padding="8dp">
 
                                 <TextView
-                                    android:id="@+id/txtnommasc"
+                                    android:id="@+id/txtnompet"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginVertical="5dp"
+                                    android:text="Nombre "
+                                    android:textSize="18dp" />
+
+                                <TextView
+                                    android:id="@+id/txtedadpet"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginVertical="5dp"
@@ -111,9 +118,8 @@
                                     android:text="Tipo "
                                     android:textSize="18dp" />
 
-
                                 <TextView
-                                    android:id="@+id/txtsexoasc"
+                                    android:id="@+id/txtsexmasc"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginVertical="5dp"
@@ -128,7 +134,6 @@
                                     android:text="Peso "
                                     android:textSize="18dp" />
 
-
                                 <TextView
                                     android:id="@+id/txttammasc"
                                     android:layout_width="wrap_content"
@@ -137,9 +142,8 @@
                                     android:text="Tamaño"
                                     android:textSize="18dp" />
 
-
-
                             </LinearLayout>
+
                         </LinearLayout>
 
                     </LinearLayout>
