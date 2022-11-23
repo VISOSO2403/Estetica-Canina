@@ -53,7 +53,7 @@ public class MascotaActivity extends AppCompatActivity implements View.OnClickLi
                 String pesomasc = documentSnapshot.getString("Peso");
                 String sexomasc = documentSnapshot.getString("Sexo");
                 String tipomasc = documentSnapshot.getString("Tipo");
-                String tamanomasc = documentSnapshot.getString("tamano");
+                String tamanomasc = documentSnapshot.getString("Tamano");
 
                 nombre.setText("Nombre: " + nombremasc);
                 edad.setText("Edad: " + edadmasc);
