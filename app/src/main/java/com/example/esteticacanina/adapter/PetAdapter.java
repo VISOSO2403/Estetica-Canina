@@ -28,7 +28,7 @@ public class PetAdapter extends FirestoreRecyclerAdapter<Pet, PetAdapter.ViewHol
      *
      * @param options
      */
-    public PetAdapter(@NonNull FirestoreRecyclerOptions<Pet> options) {
+    public PetAdapter(@NonNull FirestoreRecyclerOptions<Pet> options, Activity activity) {
         super(options);
         this.activity = activity;
     }
