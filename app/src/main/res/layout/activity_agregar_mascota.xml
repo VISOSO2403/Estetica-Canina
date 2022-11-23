@@ -11,7 +11,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
+        android:padding="8dp"
         android:scrollbars="none">
 
         <RelativeLayout
@@ -30,7 +30,7 @@
                 android:id="@+id/card"
                 style="@style/AppTheme.CardView"
                 android:layout_below="@+id/title"
-                app:cardCornerRadius="12dp">
+                app:cardCornerRadius="24dp">
 
                 <RelativeLayout
                     android:id="@+id/linearLayoutCardContent"
@@ -44,7 +44,20 @@
                         android:layout_height="wrap_content"
                         android:background="@color/whiterect"
                         android:orientation="vertical"
-                        android:padding="8dp">
+                        android:padding="8dp"
+                        android:gravity="right">
+
+                        <Button
+                            android:id="@+id/btncancagrmasc"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:text="x"
+                            android:textColor="@color/white"
+                            app:backgroundTint="@color/morado"
+                            android:textAllCaps="false"
+                            android:textSize="20dp"
+                            android:background="@drawable/stylo_border_mix"/>
+
 
                         <ImageView
                             android:id="@+id/imageView"
@@ -206,19 +219,6 @@
                                 android:text="Agregar"
                                 app:cornerRadius="24dp"
                                 tools:ignore="TouchTargetSizeCheck" />
-
-                            <Button
-                                android:id="@+id/btncancagrmasc"
-                                style="?attr/materialButtonOutlinedStyle"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginHorizontal="25dp"
-                                android:layout_marginTop="5dp"
-                                android:text="Cancelar"
-                                android:textColor="@color/morado"
-                                android:textSize="12dp"
-                                app:cornerRadius="24dp"
-                                app:strokeColor="@color/morado" />
 
                         </LinearLayout>
 
