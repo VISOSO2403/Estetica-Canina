@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 
-public class LoginActivity extends AppCompatActivity{
+public class LoginActivity extends AppCompatActivity {
 
     //Esta vez usaremos variables para asignarles un objeto
     private EditText email, pass;
@@ -54,6 +54,7 @@ public class LoginActivity extends AppCompatActivity{
                 registerActivity();
             }
         });
+
     }//aqui termina tu onCreate
 
     public void registerActivity(){
@@ -85,6 +86,15 @@ public class LoginActivity extends AppCompatActivity{
                    }
                }
            });
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (mAuth.getCurrentUser() != null) {
+            startActivity(new Intent(LoginActivity.this, MenuActivity.class));
+            finish();
         }
     }
 }//Aqui termina tu Login activity
