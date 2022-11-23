@@ -21,7 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ServicioAdapter extends FirestoreRecyclerAdapter<Servicio, ServicioAdapter.ViewHolder> {
 
-    private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
+    //private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
     Activity activity;
     /**
      * Create a new RecyclerView adapter that listens to a Firestore Query.  See {@link
