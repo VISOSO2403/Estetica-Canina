@@ -9,6 +9,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/whiterect"
         tools:ignore="MissingConstraints">
 
         <com.google.android.material.card.MaterialCardView
@@ -25,8 +26,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/whiterect"
-                    android:orientation="horizontal"
+                    android:background="#DFD1E9"                    android:orientation="horizontal"
                     android:padding="8dp">
 
                     <ImageView
@@ -52,6 +52,7 @@
                             android:layout_weight="1"
                             android:gravity="center_vertical"
                             android:hint="Nombre"
+                            android:textColor="@color/black"
                             android:textAppearance="?attr/textAppearanceHeadline6" />
 
                         <LinearLayout
@@ -67,6 +68,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_vertical"
                                 android:hint="Sexo"
+                                android:textColor="@color/black"
                                 android:textSize="18dp" />
 
                             <TextView
@@ -77,6 +79,7 @@
                                 android:layout_weight="1"
                                 android:gravity="center_vertical"
                                 android:hint="Peso"
+                                android:textColor="@color/black"
                                 android:textSize="18dp" />
 
                         </LinearLayout>

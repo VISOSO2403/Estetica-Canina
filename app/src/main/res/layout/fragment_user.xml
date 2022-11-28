@@ -59,7 +59,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:gravity="center"
-                                android:text="Nombre de usuario"
+                                android:hint="Nombre de usuario"
                                 android:textAppearance="?attr/textAppearanceHeadline6"
                                 android:textSize="20dp" />
 
@@ -128,12 +128,14 @@
                                 <!---https://www.develou.com/android-listas-adaptadores/#Anadir_ListView_al_layout-->
                                 <LinearLayout
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content">
+                                    android:layout_height="wrap_content"
+                                    app:cornerRadius="24dp">
 
                                     <androidx.recyclerview.widget.RecyclerView
                                         android:id="@+id/recycle"
                                         android:layout_width="match_parent"
-                                        android:layout_height="wrap_content" />
+                                        android:layout_height="wrap_content"
+                                        app:cornerRadius="24dp" />
 
                                 </LinearLayout>
 
