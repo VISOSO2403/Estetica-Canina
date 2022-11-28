@@ -53,9 +53,6 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
         }
 
 
-
-
-
     // Vuelve a una pantalla anterior al proceso actual
     // mediante el boton onBack del telefono
     @Override

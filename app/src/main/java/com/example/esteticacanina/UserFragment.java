@@ -24,7 +24,7 @@ import com.google.firebase.firestore.Query;
 
 public class UserFragment extends Fragment {
 
-    Button agremasc, cerrarSesion;
+    Button agremasc, cerrarSesion, acercaDe, priPoli;
     FirebaseAuth mAuth;
     FirebaseUser mUser;
 
@@ -58,11 +58,31 @@ public class UserFragment extends Fragment {
         //Variables de botones
         agremasc = root.findViewById(R.id.btnagrmasc);
         cerrarSesion = root.findViewById(R.id.btncerrarsesion);
+        acercaDe = root.findViewById(R.id.btnacerde);
+        priPoli = root.findViewById(R.id.btnpripoli);
 
         agremasc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getActivity(), AgregarMascotaActivity.class);
+                startActivity(i);
+                getActivity().finish();
+            }
+        });
+
+        acercaDe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), AcercaDeActivity.class);
+                startActivity(i);
+                getActivity().finish();
+            }
+        });
+
+        priPoli.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), PrivacidadPoliticasActivity.class);
                 startActivity(i);
                 getActivity().finish();
             }
