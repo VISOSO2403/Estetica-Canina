@@ -13,6 +13,7 @@ import android.graphics.Typeface;
 import android.graphics.pdf.PdfDocument;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -25,6 +26,9 @@ import androidx.core.content.ContextCompat;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 
 public class ReporteActivity extends AppCompatActivity {
 
@@ -39,6 +43,9 @@ public class ReporteActivity extends AppCompatActivity {
     // creating a bitmap variable
     // for storing our images
     Bitmap bmp, scaledbmp;
+
+    String currentTime = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+    String name_pdf_file = "Reporte" + currentTime + ".pdf";
 
     // constant code for runtime permissions
     private static final int PERMISSION_REQUEST_CODE = 200;
@@ -133,7 +140,7 @@ public class ReporteActivity extends AppCompatActivity {
         // below line is used for setting
         // our text to center of PDF.
         title.setTextAlign(Paint.Align.CENTER);
-        canvas.drawText("Prueba 3", 396, 560, title);
+        canvas.drawText("Prueba 4", 396, 560, title);
 
         // after adding all attributes to our
         // PDF file we will be finishing our page.
@@ -141,11 +148,12 @@ public class ReporteActivity extends AppCompatActivity {
 
         // below line is used to set the name of
         // our PDF file and its path.
-        File file = new File(Environment.getExternalStorageDirectory(), "Reporte.pdf");
+        File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString(), name_pdf_file);
 
         try {
             // after creating a file name we will
             // write our PDF file to that location.
+            Log.e("Downloads folder ", String.valueOf(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString()));
             pdfDocument.writeTo(new FileOutputStream(file));
 
             // below line is to print toast message
@@ -154,6 +162,7 @@ public class ReporteActivity extends AppCompatActivity {
         } catch (IOException e) {
             // below line is used
             // to handle error
+            Log.e("Error ", String.valueOf(e));
             e.printStackTrace();
         }
         // after storing our pdf to that
