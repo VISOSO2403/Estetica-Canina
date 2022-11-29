@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AgregarMascotaActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+public class AgregarMascotaActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     Button cancelar, agregar;
     EditText nombre, peso, edad;
@@ -38,8 +39,6 @@ public class AgregarMascotaActivity extends AppCompatActivity implements View.On
     Spinner tamaniop;
     String tamano = "";
 
-
-
     private FirebaseFirestore firebaseFirestore;
 
     @Override
@@ -47,12 +46,13 @@ public class AgregarMascotaActivity extends AppCompatActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_mascota);
 
+        String id = getIntent().getStringExtra("id_pet");
+
         //FirebaseFireStore
         firebaseFirestore = FirebaseFirestore.getInstance();
 
         //EditText
         nombre = findViewById(R.id.etxtnombremasc);
-
         peso = findViewById(R.id.etxtpeso);
         edad = findViewById(R.id.etxtedad);
 
@@ -90,55 +90,110 @@ public class AgregarMascotaActivity extends AppCompatActivity implements View.On
         //Buttons
         cancelar = findViewById(R.id.btncancagrmasc);
         agregar = findViewById(R.id.btnagremasc);
-        cancelar.setOnClickListener(this);
-        agregar.setOnClickListener(this);
 
-    }
+        if (id == null || id == "") {
+            agregar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    nom = nombre.getText().toString().trim();
+                    eda = edad.getText().toString().trim();
+                    pes = peso.getText().toString().trim();
 
+                    if (perro.isChecked() == true){
+                        tipo = "Perro";
+                    }
+                    else if (gato.isChecked() == true){
+                        tipo = "Gato";
+                    }
 
-    @Override
-    public void onClick(View view) {
-        nom = nombre.getText().toString().trim();
-        eda = edad.getText().toString().trim();
-        pes = peso.getText().toString().trim();
+                    if(hembra.isChecked() == true) {
+                        sex = "Hembra";
+                    }
+                    else if (macho.isChecked() == true){
+                        sex = "Macho";
+                    }
 
-        if (perro.isChecked() == true){
-            tipo = "Perro";
-        }
-        else if (gato.isChecked() == true){
-            tipo = "Gato";
-        }
-
-        if(hembra.isChecked() == true) {
-            sex = "Hembra";
-        }
-        else if (macho.isChecked() == true){
-            sex = "Macho";
-        }
-
-        switch (view.getId()) {
-            case R.id.btnagremasc:
-                if (nom.isEmpty() || sex.equals("") || pes.isEmpty() || eda.isEmpty() || tipo.equals("")) {
-                    Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+                    if (nom.isEmpty() || sex.equals("") || pes.isEmpty() || eda.isEmpty() || tipo.equals("")) {
+                        Toast.makeText(AgregarMascotaActivity.this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        postPet(nom, eda, pes, sex, tipo);
+                        Toast.makeText(AgregarMascotaActivity.this, "Mascota agregada", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else {
-                    postPet(nom, eda, pes, sex, tipo);
-                    Toast.makeText(this, "Mascota agregada", Toast.LENGTH_SHORT).show();
+            });
+        } else {
+            agregar.setText("Actualizar");
+            getPet(id);
+            agregar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    nom = nombre.getText().toString().trim();
+                    eda = edad.getText().toString().trim();
+                    pes = peso.getText().toString().trim();
+
+                    if (perro.isChecked() == true){
+                        tipo = "Perro";
+                    }
+                    else if (gato.isChecked() == true){
+                        tipo = "Gato";
+                    }
+
+                    if(hembra.isChecked() == true) {
+                        sex = "Hembra";
+                    }
+                    else if (macho.isChecked() == true){
+                        sex = "Macho";
+                    }
+
+                    if (nom.isEmpty() || sex.equals("") || pes.isEmpty() || eda.isEmpty() || tipo.equals("")) {
+                        Toast.makeText(AgregarMascotaActivity.this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        updatePet(nom, eda, pes, sex, tipo, id);
+                        Toast.makeText(AgregarMascotaActivity.this, "Datos actualizados", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                break;
-            case R.id.btncancagrmasc:
+            });
+        }
+
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 startActivity(new Intent(AgregarMascotaActivity.this, MenuActivity.class));
                 finish();
-                Toast.makeText(AgregarMascotaActivity.this, "Proceso cancelado", Toast.LENGTH_LONG).show();
-                break;
-        }
+            }
+        });
+    }
+
+    private void updatePet(String nom, String eda, String pes, String sex, String tipo, String id) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("Nombre", nom);
+        map.put("Edad", eda);
+        map.put("Peso", pes);
+        map.put("Sexo", sex);
+        map.put("Tipo", tipo);
+        map.put("Tamano",tamano);
+
+        firebaseFirestore.collection("pet").document(id).update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void unused) {
+                startActivity(new Intent(AgregarMascotaActivity.this, MenuActivity.class));
+                finish();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(AgregarMascotaActivity.this, "Error al actualizar los datos", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void postPet(String nom, String eda, String pes, String sex, String tipo) {
         Map<String, Object> map = new HashMap<>();
         map.put("Nombre", nom);
         map.put("Edad", eda);
-        map.put("Peso", pes + "kg");
+        map.put("Peso", pes);
         map.put("Sexo", sex);
         map.put("Tipo", tipo);
         map.put("Tamano",tamano);
@@ -158,6 +213,46 @@ public class AgregarMascotaActivity extends AppCompatActivity implements View.On
         });
     }
 
+    private void getPet(String id) {
+        firebaseFirestore.collection("pet").document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String nom = documentSnapshot.getString("Nombre");
+                String eda = documentSnapshot.getString("Edad");
+                String pes = documentSnapshot.getString("Peso");
+                String sex = documentSnapshot.getString("Sexo");
+                String tam = documentSnapshot.getString("Tamano");
+                String tip = documentSnapshot.getString("Tipo");
+
+                nombre.setText(nom);
+                edad.setText(eda);
+                peso.setText(pes);
+
+                //Falta jalar correctamente el Spinner
+             
+
+
+                if (sex.equals("Hembra")) {
+                    hembra.setChecked(true);
+                }else {
+                    macho.setChecked(true);
+                }
+
+                if (tip.equals("Perro")) {
+                    perro.setChecked(true);
+                }else{
+                    gato.setChecked(true);
+                }
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(AgregarMascotaActivity.this, "Error al obtener los datos", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -168,4 +263,9 @@ public class AgregarMascotaActivity extends AppCompatActivity implements View.On
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(AgregarMascotaActivity.this, MenuActivity.class));
+    }
 }
