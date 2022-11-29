@@ -161,6 +161,14 @@
                     android:inputType="textPassword"
                     tools:ignore="SpeakableTextPresentCheck" />
 
+                <CheckBox android:id="@+id/cb_terminos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aceptas terminos y condiciones"
+                    android:onClick="onCheckboxClicked"/>
+
+
+
                 <Button
                     android:id="@+id/btnregistrarse"
                     android:layout_width="match_parent"

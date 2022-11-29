@@ -1,16 +1,16 @@
 package com.example.esteticacanina;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -27,6 +27,7 @@ import java.util.Map;
 public class SigInActivity extends AppCompatActivity{
     private EditText nombre, apellido, email, contraseña;
     private Button ingresar, inicio;
+    private CheckBox termCond;
 
     private String usuario;
     private FirebaseAuth mAuth;
@@ -43,6 +44,8 @@ public class SigInActivity extends AppCompatActivity{
         contraseña = findViewById(R.id.etxtpassword);
         ingresar = findViewById(R.id.btnregistrarse);
         inicio = findViewById(R.id.btniniciar);
+
+        termCond = findViewById(R.id.cb_terminos);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -111,4 +114,20 @@ public class SigInActivity extends AppCompatActivity{
             });
         }
     }
+
+//    public void onCheckboxClicked(View view) {
+//        // Is the view now checked?
+//        boolean checked = ((CheckBox) view).isChecked();
+//
+//        // Check which checkbox was clicked
+//        switch(view.getId()) {
+//            case R.id.cb_terminos:
+//                if (checked){
+//                    crearUsuario();
+//                }else {
+//                    Toast.makeText(SigInActivity.this, "No has aceptado los terminos y condiciones", Toast.LENGTH_LONG).show();
+//                }
+//                break;
+//        }
+//    }
 }
