@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReporteActivity">
+
+    <Button
+        android:id="@+id/btnreporte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="15dp"
+        android:layout_weight="5"
+        android:backgroundTint="@color/morado"
+        android:text="Generar Reporte"
+        android:textColor="#FFFFFF"
+        android:textSize="12dp"
+        app:cornerRadius="24dp" />
+
+</RelativeLayout>
