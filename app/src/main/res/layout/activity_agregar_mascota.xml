@@ -29,8 +29,9 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
                 style="@style/AppTheme.CardView"
-                android:layout_below="@+id/title"
-                app:cardCornerRadius="24dp">
+                app:cardCornerRadius="24dp"
+                android:layout_marginBottom="30dp"
+                android:layout_below="@+id/title">
 
                 <RelativeLayout
                     android:id="@+id/linearLayoutCardContent"

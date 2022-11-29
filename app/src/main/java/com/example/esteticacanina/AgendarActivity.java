@@ -1,9 +1,6 @@
 package com.example.esteticacanina;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
-import android.app.DialogFragment;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -11,9 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
@@ -73,7 +71,7 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
                 new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                String fecha = dayOfMonth + "/" + month + "/" + year;
+                String fecha = dayOfMonth + "/" + month+1 + "/" + year;
                 diaselect.setText(fecha);
             }
         }, anio, mes, dia); dpd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.LTGRAY));
