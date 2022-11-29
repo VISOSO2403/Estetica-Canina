@@ -228,19 +228,20 @@ public class AgregarMascotaActivity extends AppCompatActivity implements Adapter
                 edad.setText(eda);
                 peso.setText(pes);
 
-                //Falta jalar correctamente el Spinner y los RadioButtons
-                tamano.equals(tam);
+                //Falta jalar correctamente el Spinner
+             
+
 
                 if (sex.equals("Hembra")) {
-                    hembra.equals(true);
+                    hembra.setChecked(true);
                 }else {
-                    macho.equals(true);
+                    macho.setChecked(true);
                 }
 
                 if (tip.equals("Perro")) {
-                    perro.equals();
-                }else {
-                    gato.equals(true);
+                    perro.setChecked(true);
+                }else{
+                    gato.setChecked(true);
                 }
 
             }
