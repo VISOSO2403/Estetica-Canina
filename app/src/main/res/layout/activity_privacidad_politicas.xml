@@ -68,26 +68,235 @@
                             android:orientation="vertical"
                             android:padding="8dp">
 
-                            <TextView
-                                android:id="@+id/txtnomserv"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:gravity="center_vertical"
-                                android:layout_marginVertical="15dp"
-                                android:text="Servicio"
-                                android:textAppearance="?attr/textAppearanceHeadline6" />
 
                             <TextView
-                                android:id="@+id/txtinfoserv"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:layout_marginVertical="15dp"
-                                android:gravity="center_vertical"
-                                android:text="Descripcion" />
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:gravity="center_horizontal"
+                                android:text="Términos de uso"
+                                android:textColor="@color/purple_700"
+                                android:textSize="18dp"
+                                android:justificationMode="inter_word"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="USUARIO:"
+                                android:textColor="@color/black"
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:text="• Al agendar una cita, el usuario deberá estar al tanto de la confirmación de su
+cita."
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="• Al agendar una cita, el usuario deberá llegar a su cita 20 minutos antes y
+cumpliendo los acuerdos dados. De lo contrario su cita será ocupada por
+otra persona."
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="• Al agendar una cita, el usuario deberá llegar por su mascota 10 minutos
+antes de la hora de término en caso de ser un servicio de estética"
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="25dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="ADMINISTRADOR:"
+                                android:textColor="@color/black"
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:text="• Al agendar una cita, el usuario deberá estar al tanto de la confirmación de su
+cita."
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="• Al agendar una cita, el usuario deberá llegar a su cita 20 minutos antes y
+cumpliendo los acuerdos dados. De lo contrario su cita será ocupada por
+otra persona."
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="• Al agendar una cita, el usuario deberá llegar por su mascota 10 minutos
+antes de la hora de término en caso de ser un servicio de estética"
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="25dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="SERVICIOS:"
+                                android:textColor="@color/black"
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:text="Estética Canina Sandy se compromete a:"
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="• Cumplir lo especificado en cada uno de los servicios:"
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="• Mantener la seguridad de la mascota a la que se le está
+proporcionando el servicio."
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="• Entregar dicha mascota únicamente al usuario que realizo la cita."
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="• Estética Canina Sandy y los desarrolladores de la app, no se hacen responsables
+del mal uso de la aplicación, así como de la distribución de la información por parte
+de los usuarios."
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="25dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:gravity="center_horizontal"
+                                android:text="Política de uso de datos"
+                                android:textColor="@color/purple_700"
+                                android:textSize="18dp"
+                                android:justificationMode="inter_word"/>
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="left"
+                                android:text="• Permite el acceso directo de los clientes a tus datos y que las reglas de seguridad
+de FireBase son la única protección que bloquea el acceso de usuarios maliciosos."
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="• Acceso solo para el propietario del contenido: restringen el acceso solo al
+propietario autenticado del contenido. Los datos sólo pueden ser escritos y leídos
+por un usuario y la ruta de acceso a los datos contiene su ID."
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="• Acceso público y privado mixto: permite que cualquiera pueda leer un conjunto de
+datos, pero, la capacidad de crear o modificar datos en una ruta de acceso
+determinada se restringe solo al propietario del contenido autenticado.
+"
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="25dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:gravity="center_horizontal"
+                                android:text="Política de seguridad"
+                                android:textColor="@color/purple_700"
+                                android:textSize="18dp"
+                                android:justificationMode="inter_word"/>
+
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="• La aplicación tiene la responsabilidad de proteger sus datos personales frente a
+accesos no autorizados, así como recuperar su cuenta en caso de no poder acceder
+a ella. Debido al uso de un correo valido y una contraseña segura se busca proteger
+los datos del usuario de accesos de terceros, así como tener toda su información
+privada en bases de datos protegidas por Google. El uso de FireBase para
+almacenar los datos de la aplicación permite que los datos se conserven íntegros y
+la corrupción de datos por fallos externos no afecte al usuario al igual que si los
+fallos persisten la disponibilidad de los servicios no se verá afectada"
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="5dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+
+
 
 
 
