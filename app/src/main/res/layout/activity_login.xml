@@ -51,8 +51,8 @@
                     android:layout_weight="5"
                     android:background="@drawable/stylo_border_left"
                     android:text="Iniciar"
-                    android:textColor="#130000"
-                    app:backgroundTint="#DFDEDE" />
+                    android:textColor="#FFFFFF"
+                    app:backgroundTint="@color/morado" />
 
                 <Button
                     android:id="@+id/btnregistrar"
@@ -60,7 +60,8 @@
                     android:layout_height="match_parent"
                     android:layout_weight="5"
                     android:background="@drawable/stylo_border_right"
-                    app:backgroundTint="@color/morado"
+                    app:backgroundTint="#DFDEDE"
+                    android:textColor="#130000"
                     android:text="Registrarse" />
 
             </LinearLayout>
