@@ -13,7 +13,7 @@
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
+        android:padding="8dp"
         android:scrollbars="none">
 
         <RelativeLayout
@@ -31,9 +31,9 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
                 style="@style/AppTheme.CardView"
-                android:layout_below="@+id/title"
+                app:cardCornerRadius="24dp"
                 android:layout_marginBottom="30dp"
-                app:cardCornerRadius="12dp">
+                android:layout_below="@+id/title">
 
                 <RelativeLayout
                     android:id="@+id/linearLayoutCardContent"
