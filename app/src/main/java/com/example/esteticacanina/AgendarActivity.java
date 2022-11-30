@@ -1,5 +1,6 @@
 package com.example.esteticacanina;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
@@ -15,28 +16,74 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.esteticacanina.adapter.UserAdapter;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+
 import java.util.Calendar;
 
 public class AgendarActivity extends AppCompatActivity implements View.OnClickListener {
 
     //VARIBLES
+    TextView nom;
     Button cancelar, confirmar;
     TextView diaselect;
     Intent i;
+
+    private FirebaseFirestore db;
+    private FirebaseAuth firebaseAuth;
+    private String usuario;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agendar);
+
+        String id = getIntent().getStringExtra("id_users");
+        //mfirestore = FirebaseFirestore.getInstance();
+        //Query query = mfirestore.collection("users");
+
         diaselect = findViewById(R.id.etxtdiacita);
-
         cancelar = findViewById(R.id.btncancelar);
-
-
         cancelar.setOnClickListener(this);
+        nom = findViewById(R.id.etxtnom);
+        //esto es para jalar datos
+        firebaseAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        usuario = firebaseAuth.getCurrentUser().getUid();
 
+        getUser();
     }
+    private void getUser() {
+        db.collection("users").document(usuario).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                //String Nombre = ""+ snapshot.child("Nombre").getValue();
+                String Nombre = documentSnapshot.getString("Nombre");
+                String apellido = documentSnapshot.getString("Apellido");
+                nom.setText(Nombre +" "+ apellido );
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(), "Error al obtener los datos", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
     @Override
     public void onClick(View view) {

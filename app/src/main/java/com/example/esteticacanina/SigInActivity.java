@@ -94,6 +94,7 @@ public class SigInActivity extends AppCompatActivity{
                         user.put("Correo", mail);
                         user.put("Apellido", apell);
                         user.put("Contraseña", contra);
+                        user.put("uid", usuario);
 
                         dcReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
