@@ -73,7 +73,7 @@
                             app:cornerRadius="24dp">
 
                             <ImageView
-                                android:id="@+id/imageView"
+                                android:id="@+id/imgtypepet"
                                 android:layout_width="150dp"
                                 android:layout_height="150dp"
                                 android:layout_gravity="center"
@@ -82,7 +82,7 @@
                                 android:layout_marginEnd="8dp"
                                 android:layout_marginBottom="8dp"
                                 android:adjustViewBounds="true"
-                                android:src="@drawable/person_icon" />
+                                app:srcCompat="@drawable/perro2" />
 
                             <LinearLayout
                                 android:id="@+id/contenedordatos"
