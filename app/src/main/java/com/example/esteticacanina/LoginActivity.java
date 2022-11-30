@@ -97,4 +97,10 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         }
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }//Aqui termina tu Login activity
