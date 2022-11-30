@@ -12,11 +12,15 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Calendar;
 
 public class AgendarActivity extends AppCompatActivity implements View.OnClickListener {
@@ -106,7 +110,7 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
                 new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                String fecha = dayOfMonth + "/" + month + "/" + year;
+                String fecha = dayOfMonth + "/" + month+1 + "/" + year;
                 diaselect.setText(fecha);
             }
         }, anio, mes, dia); dpd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.LTGRAY));

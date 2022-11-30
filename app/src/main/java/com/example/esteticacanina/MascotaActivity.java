@@ -17,7 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MascotaActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button canc, elimniar, editar;
+    Button canc;
     TextView nombre, edad, peso, tipo, tamanio, sexo;
 
     private FirebaseFirestore firebaseFirestore;
@@ -57,7 +57,7 @@ public class MascotaActivity extends AppCompatActivity implements View.OnClickLi
 
                 nombre.setText("Nombre: " + nombremasc);
                 edad.setText("Edad: " + edadmasc);
-                peso.setText("Peso: " + pesomasc);
+                peso.setText("Peso: " + pesomasc + "kg");
                 sexo.setText("Sexo: " + sexomasc);
                 tipo.setText("Tipo: " + tipomasc);
                 tamanio.setText("Tamaño: " + tamanomasc);

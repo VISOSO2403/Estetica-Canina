@@ -16,8 +16,8 @@
 
         <ImageView
             android:id="@+id/imglogo"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/logo_whitebackground" />
 
@@ -160,6 +160,30 @@
                     android:background="@drawable/stylo_border_edittex"
                     android:inputType="textPassword"
                     tools:ignore="SpeakableTextPresentCheck" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox android:id="@+id/cb_terminos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="onCheckboxClicked"/>
+                    <Button
+                        android:id="@+id/btntermcond"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Aceptas terminos y condiciones"
+                        style="?attr/materialButtonOutlinedStyle"
+                        app:strokeColor="@color/whiterect"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="12dp"/>
+
+
+                </LinearLayout>
+
+
+
 
                 <Button
                     android:id="@+id/btnregistrarse"

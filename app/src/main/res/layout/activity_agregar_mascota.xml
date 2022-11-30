@@ -29,8 +29,9 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card"
                 style="@style/AppTheme.CardView"
-                android:layout_below="@+id/title"
-                app:cardCornerRadius="24dp">
+                app:cardCornerRadius="24dp"
+                android:layout_marginBottom="30dp"
+                android:layout_below="@+id/title">
 
                 <RelativeLayout
                     android:id="@+id/linearLayoutCardContent"
@@ -89,7 +90,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginHorizontal="20dp"
-                                    android:checked="true"
                                     android:layout_weight="10"
                                     android:text="Perro"
                                     android:textSize="16dp" />
@@ -99,7 +99,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginHorizontal="20dp"
-                                    android:checked="false"
                                     android:layout_weight="10"
                                     android:text="Gato"
                                     android:textSize="16dp" />
@@ -117,7 +116,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginHorizontal="20dp"
-                                    android:checked="true"
                                     android:layout_weight="10"
                                     android:text="Macho"
                                     android:textSize="16dp" />
@@ -127,7 +125,6 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginHorizontal="20dp"
-                                    android:checked="false"
                                     android:layout_weight="10"
                                     android:text="Hembra"
                                     android:textSize="16dp" />
@@ -178,28 +175,69 @@
 
                             </RelativeLayout>
 
-                            <RelativeLayout
+                            <LinearLayout
                                 android:id="@+id/conttam"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
 
-                                <Spinner
-                                    android:id="@+id/spnrtamanio"
+                                <RadioGroup
+                                    android:id="@+id/rgrptamanos"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginHorizontal="20dp"
-                                    android:layout_marginVertical="5dp"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_weight="30"
-                                    android:prompt="@string/seleccione_un_tamaño"
-                                    android:spinnerMode="dialog" />
+                                    android:layout_gravity="center">
+
+                                    <RadioButton
+                                        android:id="@+id/rbtnmini"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="20dp"
+                                        android:layout_weight="10"
+                                        android:text="Mini"
+                                        android:textSize="16dp" />
+
+                                    <RadioButton
+                                        android:id="@+id/rbtnpequeno"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="20dp"
+                                        android:layout_weight="10"
+                                        android:text="Pequeño"
+                                        android:textSize="16dp" />
+
+                                    <RadioButton
+                                        android:id="@+id/rbtnmediano"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="20dp"
+                                        android:layout_weight="10"
+                                        android:text="Mediano"
+                                        android:textSize="16dp" />
+
+                                    <RadioButton
+                                        android:id="@+id/rbtngrande"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="20dp"
+                                        android:layout_weight="10"
+                                        android:text="Grande"
+                                        android:textSize="16dp" />
+
+                                    <RadioButton
+                                        android:id="@+id/rbtnenorme"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginHorizontal="20dp"
+                                        android:layout_weight="10"
+                                        android:text="Enorme"
+                                        android:textSize="16dp" />
+                                </RadioGroup>
 
                                 <ImageView
                                     android:id="@+id/imagetammasc"
-                                    android:layout_width="350dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="100dp"
-                                    android:layout_below="@id/spnrtamanio"
+                                    android:layout_below="@id/rgrptamanos"
                                     android:layout_gravity="center"
                                     android:layout_marginStart="8dp"
                                     android:layout_marginTop="8dp"
@@ -207,7 +245,7 @@
                                     android:layout_marginBottom="8dp"
                                     android:adjustViewBounds="true"
                                     android:src="@drawable/tamanomascota" />
-                            </RelativeLayout>
+                            </LinearLayout>
 
                             <Button
                                 android:id="@+id/btnagremasc"
