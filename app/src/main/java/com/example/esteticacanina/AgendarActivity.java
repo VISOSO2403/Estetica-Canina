@@ -36,7 +36,7 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
 
     private FirebaseFirestore db;
     private FirebaseAuth firebaseAuth;
-    private String usuario,idpet;
+    private String usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +52,7 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
         confirmar.setOnClickListener(this);
         cancelar = findViewById(R.id.btncancelar);
         cancelar.setOnClickListener(this);
-        nom = (TextView) findViewById(R.id.etxtnom);
-        etxttel = (EditText) findViewById(R.id.etxttel);
-        nomservi =(TextView) findViewById(R.id.nomservicio); //variable para el servicio
-        nomservi.setText(valor);
-        spnrselecmasc=(EditText)findViewById(R.id.spnrselecmasc);
+
         //esto es para jalar datos
         firebaseAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -156,10 +152,7 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
                 Toast.makeText(AgendarActivity.this, "Proceso cancelado", Toast.LENGTH_LONG).show();
                 break;
         }
-
-
         }
-
 
     // Vuelve a una pantalla anterior al proceso actual
     // mediante el boton onBack del telefono

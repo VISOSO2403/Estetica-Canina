@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
-    tools:context=".ServiciosActivity">
+    tools:context=".AcercaDeActivity">
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -60,15 +60,6 @@
                             android:background="@drawable/stylo_border_mix"/>
 
 
-                        <ImageView
-                            android:id="@+id/imageserv"
-                            android:layout_width="180dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_margin="8dp"
-                            android:adjustViewBounds="true"
-                            android:src="@drawable/logo_whitebackground" />
-
                         <LinearLayout
                             android:id="@+id/continfo"
                             android:layout_width="match_parent"
@@ -78,16 +69,51 @@
                             android:padding="8dp">
 
 
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textAppearance="?attr/textAppearanceHeadline6"
+                                android:gravity="center_horizontal"
+                                android:text="Estetica Canina Sandy"
+                                android:textColor="@color/purple_700"
+                                android:textSize="18dp"
+                                android:justificationMode="inter_word"/>
+                            <ImageView
+                                android:id="@+id/imglogo"
+                                android:layout_width="150dp"
+                                android:layout_height="150dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/logo_whitebackground" />
 
                             <TextView
-                                android:id="@+id/txtinfoserv"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center_vertical"
-                                android:layout_weight="1"
-                                android:layout_marginVertical="15dp"
-                                android:gravity="center_vertical"
-                                android:text="Descripcion" />
+                                android:gravity="left"
+                                android:text="•Estamos ubicados en el colomo , Manzanillo, Mexico"
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="10dp
+"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="• Nuestro numero de telefono es: 314 104 8906"
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="10dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="left"
+                                android:text="•Siguennos en facebook, estamos como ´Estética canina Sandy´"
+                                android:textColor="@android:color/black"
+                                android:layout_marginBottom="25dp"
+                                android:textSize="14dp"
+                                android:justificationMode="inter_word"/>
 
 
 

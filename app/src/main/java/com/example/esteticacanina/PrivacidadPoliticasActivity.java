@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PrivacidadPoliticasActivity extends AppCompatActivity implements View.OnClickListener {
     Button cancelar;
-    Intent i;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,8 +16,6 @@ public class PrivacidadPoliticasActivity extends AppCompatActivity implements Vi
         setContentView(R.layout.activity_privacidad_politicas);
 
         cancelar = findViewById(R.id.btncancelar);
-
-
         cancelar.setOnClickListener(this);
 
     }
@@ -28,10 +24,16 @@ public class PrivacidadPoliticasActivity extends AppCompatActivity implements Vi
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btncancelar:
-                i = new Intent(PrivacidadPoliticasActivity.this, SigInActivity.class);
-                startActivity(i);
+                startActivity(new Intent(PrivacidadPoliticasActivity.this, SigInActivity.class));
+                finish();
                 break;
         }
+    }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this, SigInActivity.class));
+        finish();
     }
 }

@@ -59,7 +59,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:gravity="center"
-                                android:hint="Nombre de usuario"
+                                android:text="nombre del usuario"
                                 android:textAppearance="?attr/textAppearanceHeadline6"
                                 android:textSize="20dp" />
 

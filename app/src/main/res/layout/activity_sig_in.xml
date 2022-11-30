@@ -166,8 +166,7 @@
 
                     <CheckBox android:id="@+id/cb_terminos"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="onCheckboxClicked"/>
+                        android:layout_height="wrap_content" />
                     <Button
                         android:id="@+id/btntermcond"
                         android:layout_width="wrap_content"
