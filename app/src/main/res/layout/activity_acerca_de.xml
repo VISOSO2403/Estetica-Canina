@@ -92,8 +92,7 @@
                                 android:gravity="left"
                                 android:text="•Estamos ubicados en el colomo , Manzanillo, Mexico"
                                 android:textColor="@android:color/black"
-                                android:layout_marginBottom="10dp
-"
+                                android:layout_marginBottom="10dp"
                                 android:textSize="14dp"
                                 android:justificationMode="inter_word"/>
                             <TextView
