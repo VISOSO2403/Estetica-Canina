@@ -50,6 +50,7 @@ public class PetAdapter extends FirestoreRecyclerAdapter<Pet, PetAdapter.ViewHol
 
         holder.nombre.setText(Pet.getNombre());
         holder.sexo.setText(Pet.getSexo());
+        holder.tipo.setText(Pet.getTipo());
 
         holder.vermas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,7 +128,7 @@ public class PetAdapter extends FirestoreRecyclerAdapter<Pet, PetAdapter.ViewHol
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         //VARIABLES A RELLENAR
-        TextView nombre, sexo;
+        TextView nombre, sexo, tipo;
         Button vermas;
         ImageView eliminar, editar;
 
@@ -136,6 +137,7 @@ public class PetAdapter extends FirestoreRecyclerAdapter<Pet, PetAdapter.ViewHol
 
             nombre = itemView.findViewById(R.id.txtnompet);
             sexo = itemView.findViewById(R.id.txtsexo);
+            tipo = itemView.findViewById(R.id.txttipo);
 
             //Buttons
             vermas = itemView.findViewById(R.id.btnvermas);
