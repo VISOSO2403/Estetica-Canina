@@ -1,5 +1,6 @@
 package com.example.esteticacanina;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,13 +27,16 @@ import java.util.Map;
 
 public class SigInActivity extends AppCompatActivity{
     private EditText nombre, apellido, email, contraseña;
-    private Button ingresar, inicio;
+    private Button ingresar, inicio, terminos;
     private CheckBox termCond;
+    private Intent i;
+
 
     private String usuario;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,7 @@ public class SigInActivity extends AppCompatActivity{
         contraseña = findViewById(R.id.etxtpassword);
         ingresar = findViewById(R.id.btnregistrarse);
         inicio = findViewById(R.id.btniniciar);
+        terminos = findViewById(R.id.btntermcond);
 
         termCond = findViewById(R.id.cb_terminos);
 
@@ -59,6 +64,19 @@ public class SigInActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 opLogin();
+            }
+        });
+
+        terminos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (view.getId()){
+                    case R.id.btntermcond:
+                        i = new Intent(SigInActivity.this, PrivacidadPoliticasActivity.class);
+                        startActivity(i);
+                        finish();
+                        break;
+                }
             }
         });
     }
