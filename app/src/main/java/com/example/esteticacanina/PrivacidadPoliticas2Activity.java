@@ -36,4 +36,11 @@ public class PrivacidadPoliticas2Activity extends AppCompatActivity implements V
         }
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this, MenuActivity.class));
+        finish();
+    }
 }
