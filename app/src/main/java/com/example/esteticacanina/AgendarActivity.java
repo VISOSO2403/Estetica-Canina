@@ -7,35 +7,42 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AgendarActivity extends AppCompatActivity implements View.OnClickListener {
 
     //VARIBLES
     TextView nom, nomservi;
+    EditText spnrselecmasc,etxttel;
     Button cancelar, confirmar;
     TextView diaselect;
     Intent i;
 
     private FirebaseFirestore db;
     private FirebaseAuth firebaseAuth;
-    private String usuario;
-
-
+    private String usuario,idpet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,13 +51,18 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
 
 
         String valor = getIntent().getStringExtra( "nomser");
+        String id = getIntent().getStringExtra("id_pet");
 
         diaselect = findViewById(R.id.etxtdiacita);
+        confirmar = (Button)findViewById(R.id.btnagendar);
+        confirmar.setOnClickListener(this);
         cancelar = findViewById(R.id.btncancelar);
         cancelar.setOnClickListener(this);
-        nom = findViewById(R.id.etxtnom);
+        nom = (TextView) findViewById(R.id.etxtnom);
+        etxttel = (EditText) findViewById(R.id.etxttel);
         nomservi =(TextView) findViewById(R.id.nomservicio); //variable para el servicio
         nomservi.setText(valor);
+        spnrselecmasc=(EditText)findViewById(R.id.spnrselecmasc);
 
         //esto es para jalar datos
         firebaseAuth = FirebaseAuth.getInstance();
@@ -58,7 +70,71 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
         usuario = firebaseAuth.getCurrentUser().getUid();
 
         getUser();
+        //getPet(id);
+        confirmar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String Cnombre = nom.getText().toString().trim();
+                String Cnumero = etxttel.getText().toString().trim();
+                String Cnompet = spnrselecmasc.getText().toString().trim();
+                String Cservic = nomservi.getText().toString().trim();
+                String Cfecha = diaselect.getText().toString();
+
+                if(Cnumero.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Ingresar los datos", Toast.LENGTH_SHORT).show();
+                }else if (Cnompet.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Ingresar los datos", Toast.LENGTH_SHORT).show();
+                }else if(Cfecha.isEmpty()){
+                    Toast.makeText(getApplicationContext(),"Ingresar los datos", Toast.LENGTH_SHORT).show();
+                }else {
+                    postCitas(Cnombre,Cnumero,Cnompet,Cservic,Cfecha);
+                }
+            }
+        });
+
     }
+
+    private void postCitas(String cnombre, String cnumero, String cnompet, String cservic, String cfecha) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("nombre", cnombre);
+        map.put("numero", cnumero);
+        map.put("mascota", cnompet);
+        map.put("servicio", cservic);
+        map.put("fecha", cfecha);
+
+
+        db.collection("citas").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+                Toast.makeText(getApplicationContext(),"Creado Exitosamente", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(AgendarActivity.this, MenuActivity.class));
+                finish();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(),"Error al ingresar los datos", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+/*
+    private void getPet(String id) {
+        db.collection("pet").document(id).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String nombremasc = documentSnapshot.getString("Nombre");
+
+                nom.setText("Nombre: " + nombremasc);
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getApplicationContext(), "Error al obtener los datos", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }*/
+
     private void getUser() {
         db.collection("users").document(usuario).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
@@ -75,6 +151,7 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
     }
+
 
     @Override
     public void onClick(View view) {
@@ -104,14 +181,14 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
     public void abrirCalendario(View view) {
     Calendar  cal = Calendar.getInstance();
     int anio = cal.get(Calendar.YEAR);
-    int mes = cal.get(Calendar.MONTH);
+    int mes = cal.get(Calendar.MONTH)+1;
     int dia = cal.get(Calendar.DAY_OF_MONTH);
 
         DatePickerDialog dpd = new DatePickerDialog(AgendarActivity.this, R.style.DialogTheme,
                 new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                String fecha = dayOfMonth + "/" + month+1 + "/" + year;
+                String fecha = dayOfMonth + "/" + month+ "/" + year;
                 diaselect.setText(fecha);
             }
         }, anio, mes, dia); dpd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.LTGRAY));

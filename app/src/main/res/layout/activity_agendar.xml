@@ -124,11 +124,13 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
-                                <Spinner
+                                <EditText
                                     android:id="@+id/spnrselecmasc"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center_vertical"
+                                    android:hint="nombre de mascota"
+                                    android:textColor="@color/morado"
                                     android:layout_marginLeft="5dp"
                                     android:layout_weight="30"
                                     android:background="@drawable/stylo_border_edittex" />
@@ -139,6 +141,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginHorizontal="15dp"
                                     android:backgroundTint="@color/morado"
+                                    android:visibility="invisible"
                                     android:text="+"
                                     app:cornerRadius="12dp" />
                             </LinearLayout>

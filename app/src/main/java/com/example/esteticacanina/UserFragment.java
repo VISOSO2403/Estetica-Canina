@@ -43,6 +43,7 @@ public class UserFragment extends Fragment {
 
         recyclerView = root.findViewById(R.id.recycle);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
         Query query = firebaseFirestore.collection("pet");
 
         FirestoreRecyclerOptions<Pet> firestoreRecyclerOptions =
