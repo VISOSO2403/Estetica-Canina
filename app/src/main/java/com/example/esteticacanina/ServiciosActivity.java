@@ -68,6 +68,7 @@ public class ServiciosActivity extends AppCompatActivity implements View.OnClick
         switch (view.getId()){
             case R.id.btnagendar:
                 i = new Intent(ServiciosActivity.this, AgendarActivity.class);
+                i.putExtra("nomser", txtnomserv.getText()+"");//truco de maestro haro
                 startActivity(i);
                 finish();
                 break;

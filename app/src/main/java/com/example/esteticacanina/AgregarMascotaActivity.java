@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -38,6 +39,9 @@ public class AgregarMascotaActivity extends AppCompatActivity {
     String tipo, nom, sex, pes, eda, tamano;
 
     private FirebaseFirestore firebaseFirestore;
+    //para vereficar el pet es del usuario
+    private FirebaseAuth firebaseAuth;
+    private String usuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,8 @@ public class AgregarMascotaActivity extends AppCompatActivity {
 
         //FirebaseFireStore
         firebaseFirestore = FirebaseFirestore.getInstance();
+        firebaseAuth = FirebaseAuth.getInstance();//para colaborar usuario
+        usuario = firebaseAuth.getCurrentUser().getUid();//coloborar usuario
 
         //EditText
         nombre = findViewById(R.id.etxtnombremasc);
@@ -201,6 +207,7 @@ public class AgregarMascotaActivity extends AppCompatActivity {
     }
 
     private void postPet(String nom, String eda, String pes, String sex, String tipo, String tamano) {
+        usuario = firebaseAuth.getCurrentUser().getUid();//agregar id del user al pet
         Map<String, Object> map = new HashMap<>();
         map.put("Nombre", nom);
         map.put("Edad", eda);
@@ -208,6 +215,7 @@ public class AgregarMascotaActivity extends AppCompatActivity {
         map.put("Sexo", sex);
         map.put("Tipo", tipo);
         map.put("Tamano",tamano);
+        map.put("uid", usuario);
 
         firebaseFirestore.collection("pet").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
