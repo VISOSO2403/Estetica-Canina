@@ -30,14 +30,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class AgregarMascotaActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class AgregarMascotaActivity extends AppCompatActivity {
 
     Button cancelar, agregar;
     EditText nombre, peso, edad;
-    RadioButton perro, gato, macho, hembra;
-    String tipo, nom, sex, pes, eda;
-    Spinner tamaniop;
-    String tamano = "";
+    RadioButton perro, gato, macho, hembra, mini, pequeno, mediano, grande, enorme;
+    String tipo, nom, sex, pes, eda, tamano;
 
     private FirebaseFirestore firebaseFirestore;
 
@@ -61,31 +59,11 @@ public class AgregarMascotaActivity extends AppCompatActivity implements Adapter
         gato = findViewById(R.id.rbntgato);
         macho = findViewById(R.id.rbtnmacho);
         hembra = findViewById(R.id.rbtnhembra);
-
-        //Spinners
-        tamaniop = findViewById(R.id.spnrtamanio);
-
-
-        //lista de tamanos
-        List<String> tamanos = new ArrayList<String>();
-        tamanos.add("Mini");
-        tamanos.add("Pequeño");
-        tamanos.add("Mediano");
-        tamanos.add("Grande");
-        tamanos.add("Enorme");
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, androidx.appcompat.R.layout.support_simple_spinner_dropdown_item, tamanos);
-
-        tamaniop.setAdapter(adapter);
-        tamaniop.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long id) {
-                tamano = tamanos.get(position);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-            }
-        });
+        mini = findViewById(R.id.rbtnmini);
+        pequeno = findViewById(R.id.rbtnpequeno);
+        mediano = findViewById(R.id.rbtnmediano);
+        grande = findViewById(R.id.rbtngrande);
+        enorme = findViewById(R.id.rbtnenorme);
 
         //Buttons
         cancelar = findViewById(R.id.btncancagrmasc);
@@ -113,11 +91,27 @@ public class AgregarMascotaActivity extends AppCompatActivity implements Adapter
                         sex = "Macho";
                     }
 
-                    if (nom.isEmpty() || sex.equals("") || pes.isEmpty() || eda.isEmpty() || tipo.equals("")) {
-                        Toast.makeText(AgregarMascotaActivity.this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+                    if (mini.isChecked() == true) {
+                        tamano = "Mini";
+                    } else if (pequeno.isChecked() == true) {
+                        tamano = "Pequeño";
+                    } else if (mediano.isChecked() == true) {
+                        tamano = "Mediano";
+                    } else if (grande.isChecked() == true) {
+                        tamano = "Grande";
+                    } else if (enorme.isChecked() == true) {
+                        tamano = "Enorme";
+                    } else {
+                        tamano = "";
+                    }
+
+                    if (nom.isEmpty() || sex.equals("") || pes.isEmpty()
+                            || eda.isEmpty() || tipo.equals("") || tamano.equals("")) {
+                        Toast.makeText(AgregarMascotaActivity.this, "Debes llenar todos los campos",
+                                Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        postPet(nom, eda, pes, sex, tipo);
+                        postPet(nom, eda, pes, sex, tipo, tamano);
                         Toast.makeText(AgregarMascotaActivity.this, "Mascota agregada", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -146,12 +140,29 @@ public class AgregarMascotaActivity extends AppCompatActivity implements Adapter
                         sex = "Macho";
                     }
 
-                    if (nom.isEmpty() || sex.equals("") || pes.isEmpty() || eda.isEmpty() || tipo.equals("")) {
-                        Toast.makeText(AgregarMascotaActivity.this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+                    if (mini.isChecked() == true) {
+                        tamano = "Mini";
+                    } else if (pequeno.isChecked() == true) {
+                        tamano = "Pequeño";
+                    } else if (mediano.isChecked() == true) {
+                        tamano = "Mediano";
+                    } else if (grande.isChecked() == true) {
+                        tamano = "Grande";
+                    } else if (enorme.isChecked() == true) {
+                        tamano = "Enorme";
+                    } else {
+                        tamano = "";
+                    }
+
+                    if (nom.isEmpty() || sex.equals("") || pes.isEmpty()
+                            || eda.isEmpty() || tipo.equals("") || tamano.equals("")) {
+                        Toast.makeText(AgregarMascotaActivity.this, "Debes llenar todos los campos",
+                                Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        updatePet(nom, eda, pes, sex, tipo, id);
-                        Toast.makeText(AgregarMascotaActivity.this, "Datos actualizados", Toast.LENGTH_SHORT).show();
+                        updatePet(nom, eda, pes, sex, tipo, tamano, id);
+                        Toast.makeText(AgregarMascotaActivity.this, "Datos actualizados",
+                                Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -166,14 +177,14 @@ public class AgregarMascotaActivity extends AppCompatActivity implements Adapter
         });
     }
 
-    private void updatePet(String nom, String eda, String pes, String sex, String tipo, String id) {
+    private void updatePet(String nom, String eda, String pes, String sex, String tipo, String tamano, String id) {
         Map<String, Object> map = new HashMap<>();
         map.put("Nombre", nom);
         map.put("Edad", eda);
         map.put("Peso", pes);
         map.put("Sexo", sex);
         map.put("Tipo", tipo);
-        map.put("Tamano",tamano);
+        map.put("Tamano", tamano);
 
         firebaseFirestore.collection("pet").document(id).update(map).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -189,7 +200,7 @@ public class AgregarMascotaActivity extends AppCompatActivity implements Adapter
         });
     }
 
-    private void postPet(String nom, String eda, String pes, String sex, String tipo) {
+    private void postPet(String nom, String eda, String pes, String sex, String tipo, String tamano) {
         Map<String, Object> map = new HashMap<>();
         map.put("Nombre", nom);
         map.put("Edad", eda);
@@ -228,10 +239,6 @@ public class AgregarMascotaActivity extends AppCompatActivity implements Adapter
                 edad.setText(eda);
                 peso.setText(pes);
 
-                //Falta jalar correctamente el Spinner
-             
-
-
                 if (sex.equals("Hembra")) {
                     hembra.setChecked(true);
                 }else {
@@ -244,6 +251,18 @@ public class AgregarMascotaActivity extends AppCompatActivity implements Adapter
                     gato.setChecked(true);
                 }
 
+                if (tam.equals("Mini")) {
+                    mini.setChecked(true);
+                } else if (tam.equals("Pequeño")) {
+                    pequeno.setChecked(true);
+                } else if (tam.equals("Mediano")) {
+                    mediano.setChecked(true);
+                } else if (tam.equals("Grande")) {
+                    grande.setChecked(true);
+                } else {
+                    enorme.setChecked(true);
+                }
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -251,16 +270,6 @@ public class AgregarMascotaActivity extends AppCompatActivity implements Adapter
                 Toast.makeText(AgregarMascotaActivity.this, "Error al obtener los datos", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
 
     @Override
