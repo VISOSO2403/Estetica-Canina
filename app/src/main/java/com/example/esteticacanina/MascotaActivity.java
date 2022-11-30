@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ public class MascotaActivity extends AppCompatActivity implements View.OnClickLi
 
     Button canc;
     TextView nombre, edad, peso, tipo, tamanio, sexo;
+    ImageView img;
 
     private FirebaseFirestore firebaseFirestore;
 
@@ -37,6 +39,10 @@ public class MascotaActivity extends AppCompatActivity implements View.OnClickLi
         tipo = findViewById(R.id.txttipomasc);
         tamanio = findViewById(R.id.txttammasc);
         sexo = findViewById(R.id.txtsexmasc);
+
+        //ImageView
+        img = findViewById(R.id.imgtypepet);
+        img.setImageResource(R.drawable.perro2);
 
         canc = findViewById(R.id.btncanc);
         canc.setOnClickListener(this);
@@ -61,6 +67,12 @@ public class MascotaActivity extends AppCompatActivity implements View.OnClickLi
                 sexo.setText("Sexo: " + sexomasc);
                 tipo.setText("Tipo: " + tipomasc);
                 tamanio.setText("Tamaño: " + tamanomasc);
+
+                if (tipomasc.equals("Gato")) {
+                    img.setImageResource(R.drawable.gato);
+                } else {
+                    img.setImageResource(R.drawable.perro2);
+                }
 
             }
         }).addOnFailureListener(new OnFailureListener() {

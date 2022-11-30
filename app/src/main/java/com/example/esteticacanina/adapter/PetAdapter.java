@@ -94,7 +94,6 @@ public class PetAdapter extends FirestoreRecyclerAdapter<Pet, PetAdapter.ViewHol
                 activity.startActivity(i);
             }
         });
-
     }
 
     private void cancelar() {
@@ -130,7 +129,8 @@ public class PetAdapter extends FirestoreRecyclerAdapter<Pet, PetAdapter.ViewHol
         //VARIABLES A RELLENAR
         TextView nombre, sexo, tipo;
         Button vermas;
-        ImageView eliminar, editar;
+        ImageView eliminar, editar, typepet;
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -145,6 +145,16 @@ public class PetAdapter extends FirestoreRecyclerAdapter<Pet, PetAdapter.ViewHol
             //ImageView
             eliminar = itemView.findViewById(R.id.imgveliminar);
             editar = itemView.findViewById(R.id.imgveditar);
+
+            //Editar la imagen dependiendo el tipo de mascota
+           /* typepet = itemView.findViewById(R.id.imagepet);
+            typepet.setImageResource(R.drawable.perro2);
+
+            if (tipo.getText() == "Gato") {
+                typepet.setImageResource(R.drawable.gato);
+            } else {
+                typepet.setImageResource(R.drawable.perro2);
+            }*/
         }
     }
 }
