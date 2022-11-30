@@ -26,7 +26,7 @@ import java.util.Calendar;
 public class AgendarActivity extends AppCompatActivity implements View.OnClickListener {
 
     //VARIBLES
-    TextView nom;
+    TextView nom, nomservi;
     Button cancelar, confirmar;
     TextView diaselect;
     Intent i;
@@ -42,14 +42,16 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agendar);
 
-        String id = getIntent().getStringExtra("id_users");
-        //mfirestore = FirebaseFirestore.getInstance();
-        //Query query = mfirestore.collection("users");
+
+        String valor = getIntent().getStringExtra( "nomser");
 
         diaselect = findViewById(R.id.etxtdiacita);
         cancelar = findViewById(R.id.btncancelar);
         cancelar.setOnClickListener(this);
         nom = findViewById(R.id.etxtnom);
+        nomservi =(TextView) findViewById(R.id.nomservicio); //variable para el servicio
+        nomservi.setText(valor);
+
         //esto es para jalar datos
         firebaseAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -73,7 +75,6 @@ public class AgendarActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
     }
-
 
     @Override
     public void onClick(View view) {

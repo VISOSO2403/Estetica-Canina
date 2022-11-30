@@ -79,6 +79,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="5dp"
+                                android:textSize="18dp"
                                 android:background="@drawable/stylo_border_edittex"
                                 android:hint="Escribe tu nombre"
                                 android:textColor="@color/morado" />
@@ -99,6 +100,7 @@
                                 android:id="@+id/etxttel"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:inputType="numberDecimal"
                                 android:layout_margin="5dp"
                                 android:background="@drawable/stylo_border_edittex"
                                 android:hint="Escribe tu teléfono"
@@ -159,23 +161,17 @@
                                 android:layout_height="wrap_content"
                                 android:orientation="horizontal">
 
-                                <Spinner
-                                    android:id="@+id/spnrselecserv"
+                                <TextView
+                                    android:id="@+id/nomservicio"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginLeft="5dp"
-                                    android:layout_weight="30"
-                                    android:background="@drawable/stylo_border_edittex" />
+                                    android:layout_margin="5dp"
+                                    android:background="@drawable/stylo_border_edittex"
+                                    android:hint="Servicio"
+                                    android:textColor="@color/morado"
+                                    android:textSize="18dp"/>
 
-                                <Button
-                                    android:id="@+id/btnagrserv"
-                                    android:layout_width="40dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginHorizontal="15dp"
-                                    android:backgroundTint="@color/morado"
-                                    android:text="+"
-                                    app:cornerRadius="12dp" />
+
                             </LinearLayout>
 
                             <TextView
