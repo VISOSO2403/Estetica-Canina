@@ -28,7 +28,7 @@ import java.util.Map;
 public class SigInActivity extends AppCompatActivity{
     private EditText nombre, apellido, email, contraseña;
     private Button ingresar, inicio, terminos;
-    private CheckBox termCond;
+    CheckBox termCond;
     private Intent i;
 
 
@@ -100,38 +100,43 @@ public class SigInActivity extends AppCompatActivity{
         String mail = email.getText().toString();
         String contra = contraseña.getText().toString();
 
-        if (nom.equals("") || apell.equals("") || mail.equals("") || contra.equals("")){
-            Toast.makeText(SigInActivity.this, "Llena cada uno de los campos", Toast.LENGTH_LONG).show();
-        }else{
-            mAuth.createUserWithEmailAndPassword(mail, contra).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
-                        usuario = mAuth.getCurrentUser().getUid();
-                        DocumentReference dcReference = db.collection("users").document(usuario);
+        if (termCond.isChecked()){
+            if (nom.equals("") || apell.equals("") || mail.equals("") || contra.equals("")){
+                Toast.makeText(SigInActivity.this, "Llena cada uno de los campos", Toast.LENGTH_LONG).show();
+            }else{
+                mAuth.createUserWithEmailAndPassword(mail, contra).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()){
+                            usuario = mAuth.getCurrentUser().getUid();
+                            DocumentReference dcReference = db.collection("users").document(usuario);
 
-                        Map<String,Object> user = new HashMap<>();
-                        user.put("Nombre", nom);
-                        user.put("Correo", mail);
-                        user.put("Apellido", apell);
-                        user.put("Contraseña", contra);
-                        user.put("uid", usuario);
+                            Map<String,Object> user = new HashMap<>();
+                            user.put("Nombre", nom);
+                            user.put("Correo", mail);
+                            user.put("Apellido", apell);
+                            user.put("Contraseña", contra);
+                            user.put("uid", usuario);
 
-                        dcReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Log.d("TAG", "onSucces: Datos registrados" + usuario);
-                            }
-                        });
-                        Toast.makeText(SigInActivity.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(SigInActivity.this, LoginActivity.class));
-                        finish();
-                    }else{
-                        Toast.makeText(SigInActivity.this, "Usuario no registrado" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            dcReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void unused) {
+                                    Log.d("TAG", "onSucces: Datos registrados" + usuario);
+                                }
+                            });
+                            Toast.makeText(SigInActivity.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(SigInActivity.this, LoginActivity.class));
+                            finish();
+                        }else{
+                            Toast.makeText(SigInActivity.this, "Usuario no registrado" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
                     }
-                }
-            });
+                });
+            }
+        } else {
+            Toast.makeText(this, "Debes aceptar los terminos y condiciones", Toast.LENGTH_LONG).show();
         }
+
     }
 
 //    public void onCheckboxClicked(View view) {
