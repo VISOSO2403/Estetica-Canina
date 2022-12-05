@@ -97,6 +97,7 @@
                     android:id="@+id/etxtnombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="text"
                     android:hint="Nombre(s)"
                     android:layout_margin="5dp"
                     android:background="@drawable/stylo_border_edittex"
@@ -117,6 +118,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Apellido(s)"
+                    android:inputType="text"
                     android:layout_margin="5dp"
                     android:background="@drawable/stylo_border_edittex"
                     android:minHeight="48dp" />
@@ -136,6 +138,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="correo@correo.com"
+                    android:inputType="textWebEmailAddress"
                     android:layout_margin="5dp"
                     android:background="@drawable/stylo_border_edittex"
                     android:minHeight="48dp" />
@@ -155,6 +158,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/textcor"
+                    app:counterEnabled="true"
                     android:minHeight="48dp"
                     android:layout_margin="5dp"
                     android:background="@drawable/stylo_border_edittex"
@@ -178,11 +182,7 @@
                         android:textColor="@color/black"
                         android:textSize="12dp"/>
 
-
                 </LinearLayout>
-
-
-
 
                 <Button
                     android:id="@+id/btnregistrarse"

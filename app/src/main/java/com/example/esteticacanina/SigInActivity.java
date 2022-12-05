@@ -1,14 +1,18 @@
 package com.example.esteticacanina;
 
+import static android.util.Patterns.EMAIL_ADDRESS;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+import java.util.regex.Pattern;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
@@ -26,11 +31,17 @@ import java.util.Map;
 
 
 public class SigInActivity extends AppCompatActivity{
+    public static final Pattern PASSWORD_PATTERN =
+            Pattern.compile("^"+
+                    "(?=.*[a-zA-Z])" +      //para cualquier letra
+                    "(?=.*[@#$%^&+=])" +    //un simbolo
+                    "(?=\\S+$)" +           //sin espacios
+                    ".{4,}" +               //hasta 4 caracteres
+                    "$");
     private EditText nombre, apellido, email, contraseña;
     private Button ingresar, inicio, terminos;
     CheckBox termCond;
     private Intent i;
-
 
     private String usuario;
     private FirebaseAuth mAuth;
@@ -93,8 +104,11 @@ public class SigInActivity extends AppCompatActivity{
         startActivity(new Intent(SigInActivity.this, LoginActivity.class));
         finish();
     }
-
+    
     public void crearUsuario(){
+        String passwordInput = contraseña.getText().toString().trim();
+        String emailInput = email.getText().toString().trim();
+
         String nom = nombre.getText().toString();
         String apell = apellido.getText().toString();
         String mail = email.getText().toString();
@@ -103,6 +117,14 @@ public class SigInActivity extends AppCompatActivity{
         if (termCond.isChecked()){
             if (nom.equals("") || apell.equals("") || mail.equals("") || contra.equals("")){
                 Toast.makeText(SigInActivity.this, "Llena cada uno de los campos", Toast.LENGTH_LONG).show();
+                }else if(!mail.equals("") && !EMAIL_ADDRESS.matcher(emailInput).matches()){
+                email.setError("Correo invalido");
+                email.requestFocus();
+                Toast.makeText(SigInActivity.this, "Ingrese un correo valido", Toast.LENGTH_SHORT).show();
+                    }else if (!contra.equals("") && !PASSWORD_PATTERN.matcher(passwordInput).matches()){
+                Toast.makeText(SigInActivity.this, "Ingrese una contraseña valida", Toast.LENGTH_SHORT).show();
+                contraseña.setError("Contraseña invalida");
+                contraseña.requestFocus();
             }else{
                 mAuth.createUserWithEmailAndPassword(mail, contra).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -117,6 +139,7 @@ public class SigInActivity extends AppCompatActivity{
                             user.put("Apellido", apell);
                             user.put("Contraseña", contra);
                             user.put("uid", usuario);
+
 
                             dcReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
@@ -138,20 +161,4 @@ public class SigInActivity extends AppCompatActivity{
         }
 
     }
-
-//    public void onCheckboxClicked(View view) {
-//        // Is the view now checked?
-//        boolean checked = ((CheckBox) view).isChecked();
-//
-//        // Check which checkbox was clicked
-//        switch(view.getId()) {
-//            case R.id.cb_terminos:
-//                if (checked){
-//                    crearUsuario();
-//                }else {
-//                    Toast.makeText(SigInActivity.this, "No has aceptado los terminos y condiciones", Toast.LENGTH_LONG).show();
-//                }
-//                break;
-//        }
-//    }
 }
